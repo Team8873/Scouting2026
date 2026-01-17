@@ -53,27 +53,10 @@ var config_data = `
       "code": "t",
       "type": "team",
       "min": 1,
-      "max": 99999
-    },
-    { "name": "Auto Start Location",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "clickRestriction": "one",
-      "dimensions": "7 10",
-      "allowableResponses": "4 11 18 25 32 39 46 53 60 67",
-      "shape": "circle 5 black red true"
+      "max": 99999,
     }
   ],
   "auton": [
-    { "name": "Auto Shooting Location",
-      "code": "asl",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-      "shape": "circle 5 black red true"
-    },
     { "name": "Fuel Scored",
       "code": "afs",
       "type": "counter"
@@ -82,9 +65,9 @@ var config_data = `
       "code": "ac",
       "type": "radio",
       "choices": {
-        "c": "Climbed<br>",
-        "a": "Attempted<br>",
-        "x": "Not Attempted"
+        "1": "Climbed<br>",
+        "2": "Attempted<br>",
+        "0": "Not Attempted"
       },
       "defaultValue": "x"
     },
@@ -102,14 +85,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Shooting Locations",
-      "code": "tsl",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-      "shape": "circle 5 black red true"
-    },
     { "name": "Fuel Scored",
       "code": "tfs",
       "type": "counter"
@@ -142,9 +117,9 @@ var config_data = `
       "choices": {
         "1": "Level 1<br>",
         "2": "Level 2<br>",
-        "3": "Level 2<br>",
-        "a": "Attempted<br>",
-        "x": "Not Attempted"
+        "3": "Level 3<br>",
+        "4": "Attempted<br>",
+        "0": "Not Attempted"
       },
       "defaultValue": "x"
     }
@@ -154,10 +129,10 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "1": "Not Effective<br>",
+        "2": "Average<br>",
+        "3": "Very Effective<br>",
+        "0": "Not Observed"
       },
       "defaultValue": "x"
     },
@@ -165,11 +140,11 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "Below Average<br>",
+        "2": "Average<br>",
+        "3": "Good<br>",
+        "4": "Excellent<br>",
+        "0": "Did not play defense"
       },
       "defaultValue": "x"
     },
