@@ -40,12 +40,12 @@ var config_data = `
       "code": "r",
       "type": "robot",
       "choices": {
-        "r1": "Red-1",
-        "b1": "Blue-1<br>",
-        "r2": "Red-2",
-        "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
+        "1": "Red-1",
+        "4": "Blue-1<br>",
+        "2": "Red-2",
+        "5": "Blue-2<br>",
+        "3": "Red-3",
+        "6": "Blue-3"
       },
       "required": "true"
     },
