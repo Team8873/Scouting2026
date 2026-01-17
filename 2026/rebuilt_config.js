@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "dataFormat": "kvs",
+  "dataFormat": "tsv",
   "title": "Scouting PASS 2026",
   "page_title": "REBUILT",
   "checkboxAs": "10",
@@ -58,10 +58,6 @@ var config_data = `
   ],
   "auton": [
     { "name": "Fuel Scored",
-      "code": "afs",
-      "type": "counter"
-    },
-        { "name": "Fuel Missed",
       "code": "afs",
       "type": "counter"
     },
@@ -208,3 +204,4 @@ var config_data = `
     }
   ]
 }`;
+
