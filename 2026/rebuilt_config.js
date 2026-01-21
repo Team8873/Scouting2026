@@ -60,10 +60,6 @@ var config_data = `
     { "name": "Fuel Scored",
       "code": "afs",
       "type": "counter"
-      },
-      { "name": "Fuel Scored",
-      "code": "afs",
-      "type": "counter"
     },
     { "name": "Climb (L1)",
       "code": "ac",
