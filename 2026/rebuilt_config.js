@@ -45,7 +45,7 @@ var config_data = `
         "2": "Red-2",
         "5": "Blue-2<br>",
         "3": "Red-3",
-        "6": "Blue-3"
+        "6": "Blue-3<br>"
       },
       "required": "true"
     },
@@ -58,6 +58,10 @@ var config_data = `
   ],
   "auton": [
     { "name": "Fuel Scored",
+      "code": "afs",
+      "type": "counter"
+      },
+      { "name": "Fuel Scored",
       "code": "afs",
       "type": "counter"
     },
