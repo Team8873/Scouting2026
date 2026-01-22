@@ -61,6 +61,10 @@ var config_data = `
       "code": "afs",
       "type": "counter"
     },
+      { "name": "Fuel Missed",
+      "code": "afs",
+      "type": "counter"
+    },
     { "name": "Climb (L1)",
       "code": "ac",
       "type": "radio",
