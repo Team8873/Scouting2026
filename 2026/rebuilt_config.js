@@ -1,4 +1,4 @@
-{
+var config_data = {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2026",
   "page_title": "REBUILT",
@@ -64,16 +64,8 @@
   ],
 
   "auton": [
-    {
-      "name": "Fuel Scored",
-      "code": "afs",
-      "type": "counter"
-    },
-    {
-      "name": "Fuel Missed",
-      "code": "ac",
-      "type": "counter"
-    },
+    { "name": "Fuel Scored", "code": "afs", "type": "counter" },
+    { "name": "Fuel Missed", "code": "ac", "type": "counter" },
     {
       "name": "Climb Level",
       "code": "afd",
@@ -86,39 +78,15 @@
         "0": "Not Attempted"
       }
     },
-    {
-      "name": "Fuel Passed",
-      "code": "afo",
-      "type": "counter"
-    },
-    {
-      "name": "Fuel Picked up",
-      "code": "aff",
-      "type": "counter"
-    },
-    {
-      "name": "Team won Auton",
-      "code": "tfs",
-      "type": "bool"
-    }
+    { "name": "Fuel Passed", "code": "afo", "type": "counter" },
+    { "name": "Fuel Picked up", "code": "aff", "type": "counter" },
+    { "name": "Team won Auton", "code": "tfs", "type": "bool" }
   ],
 
   "teleop": [
-    {
-      "name": "Feul Fired",
-      "code": "tfd",
-      "type": "counter"
-    },
-    {
-      "name": "Firing Accuracy",
-      "code": "tfo",
-      "type": "counter"
-    },
-    {
-      "name": "Fuel Passed",
-      "code": "tff",
-      "type": "counter"
-    }
+    { "name": "Feul Fired", "code": "tfd", "type": "counter" },
+    { "name": "Firing Accuracy", "code": "tfo", "type": "counter" },
+    { "name": "Fuel Passed", "code": "tff", "type": "counter" }
   ],
 
   "endgame": [
@@ -183,37 +151,17 @@
       },
       "defaultValue": "3"
     },
-    {
-      "name": "Crossed Trench",
-      "code": "sr",
-      "type": "bool"
-    },
-    {
-      "name": "Crossed Bump",
-      "code": "bmp",
-      "type": "bool"
-    },
-    {
-      "name": "Died/Immobilized",
-      "code": "tre",
-      "type": "bool"
-    },
-    {
-      "name": "Tippy<br>(almost tipped over)",
-      "code": "die",
-      "type": "bool"
-    },
+    { "name": "Crossed Trench", "code": "sr", "type": "bool" },
+    { "name": "Crossed Bump", "code": "bmp", "type": "bool" },
+    { "name": "Died/Immobilized", "code": "tre", "type": "bool" },
+    { "name": "Tippy<br>(almost tipped over)", "code": "die", "type": "bool" },
     {
       "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "tip",
       "type": "bool"
     },
-    {
-      "name": "Was Blocked",
-      "code": "all",
-      "type": "bool"
-    },
+    { "name": "Was Blocked", "code": "all", "type": "bool" },
     {
       "name": "Comments",
       "code": "def",
@@ -222,4 +170,4 @@
       "maxSize": 55
     }
   ]
-}
+};
