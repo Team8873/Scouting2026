@@ -45,7 +45,7 @@ var config_data = `
         "2": "Red-2",
         "5": "Blue-2<br>",
         "3": "Red-3",
-        "6": "Blue-3<br>"
+        "6": "Blue-3"
       },
       "required": "true"
     },
@@ -61,10 +61,6 @@ var config_data = `
       "code": "afs",
       "type": "counter"
     },
-      { "name": "Fuel Missed",
-      "code": "afs",
-      "type": "counter"
-    },
     { "name": "Climb (L1)",
       "code": "ac",
       "type": "radio",
@@ -75,9 +71,9 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Pickup from Depot",
+    { "name": "Missed fuel",
       "code": "afd",
-      "type": "bool"
+      "type": "counter"
     },
     { "name": "Pickup from Outpost",
       "code": "afo",
