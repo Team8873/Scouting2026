@@ -1,4 +1,3 @@
-console.log("config loaded");
 var config_data = `
 {
   "dataFormat": "tsv",
