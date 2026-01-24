@@ -57,13 +57,20 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Scored",
+    { "name": "Fuel Fired",
       "code": "afs",
       "type": "counter"
     },
-    { "name": "Fuel Missed",
+    { "name": "Fuel Acc",
       "code": "ac",
-      "type": "counter"
+      "type": "Radio"
+       "choices": {
+        "0": "0%",
+        ".2": "20%",
+        ".4": "40%",
+        ".6": "60%",
+        ".8": "80%",
+        "1": "100%"
       },
     { "name": "Climb?",
       "code": "afd",
