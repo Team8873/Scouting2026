@@ -121,7 +121,7 @@ var config_data = `
         "1": "Level 1<br>",
         "2": "Level 2<br>",
         "3": "Level 3<br>",
-        "4": "Attempted<br>",
+        ".5": "Attempted but Failed<br>",
         "0": "Not Attempted<br>"
       },
       "defaultValue": "x"
@@ -132,7 +132,7 @@ var config_data = `
       "choices": {
       "1": "Inside<br>",
       "2": "Outside<br>",
-      "3": "Attempted<br>",
+      ".5": "Attempted But Failed<br>",
       "0": "Not Attempted<br>"
       }
      }
