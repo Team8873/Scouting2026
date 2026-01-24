@@ -63,7 +63,7 @@ var config_data = `
     },
     { "name": "Fuel Missed",
       "code": "ac",
-      "type": "counter",
+      "type": "counter"
       },
     { "name": "Pickup from Depot",
       "code": "afd",
