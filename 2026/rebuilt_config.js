@@ -125,8 +125,17 @@ var config_data = `
         "0": "Not Attempted"
       },
       "defaultValue": "x"
-    }
-  ],
+    },
+    { "name": "Climb Position",
+      "code": "poa",
+      "type": "radio",
+      "choices": {
+      "1": "Inside<br>",
+      "2": "Outside<br>",
+      "3": "Attempted<br>",
+      "0": "Not Attempted"
+     }
+    ],
   "postmatch": [
     { "name": "Driver Skill",
       "code": "ds",
