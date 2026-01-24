@@ -108,22 +108,14 @@ var config_data = `
         "1": "100%"
        }
       },
-    { "name": "Pickup from Floor",
+    { "name": "Fuel passed",
       "code": "tff",
-      "type": "bool"
-    },
-    { "name": "Pass from Neutral Zone",
-      "code": "pnz",
-      "type": "bool"
-    },
-    { "name": "Pass from Opp<br>Alliance Zone",
-      "code": "poa",
-      "type": "bool"
+      "type": "counter"
     }
   ],
   "endgame": [
     { "name": "Climb",
-      "code": "tc",
+      "code": "pnz",
       "type": "radio",
       "choices": {
         "1": "Level 1<br>",
