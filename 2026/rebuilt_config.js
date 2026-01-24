@@ -63,7 +63,7 @@ var config_data = `
     },
     { "name": "Fuel Acc",
       "code": "ac",
-      "type": "Radio",
+      "type": "radio",
        "choices": {
         "0": "0%",
         ".2": "20%",
