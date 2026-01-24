@@ -132,7 +132,6 @@ var config_data = `
       "choices": {
       "1": "Inside<br>",
       "2": "Outside<br>",
-      ".5": "Attempted But Failed<br>",
       "0": "Not Attempted<br>"
       }
      }
