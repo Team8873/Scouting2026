@@ -98,12 +98,16 @@ var config_data = `
     {
      "name": "Fired Accuracy",
      "code": "tfo",
-     "type": "range",
-      "min": "0",
-      "max": "1",
-      "step": ".01",
-      "default": ".5"
-    },
+     "type": "radio",
+     "choices": {
+        "0": "0%",
+        ".2": "20%",
+        ".4": "40%",
+        ".6": "60%",
+        ".8": "80%",
+        "1": "100%"
+       }
+      },
     { "name": "Pickup from Floor",
       "code": "tff",
       "type": "bool"
