@@ -61,16 +61,10 @@ var config_data = `
       "code": "afs",
       "type": "counter"
     },
-    { "name": "Climb (L1)",
+    { "name": "Fuel Missed",
       "code": "ac",
-      "type": "radio",
-      "choices": {
-        "1": "Climbed<br>",
-        "2": "Attempted<br>",
-        "0": "Not Attempted"
+      "type": "counter",
       },
-      "defaultValue": "x"
-    },
     { "name": "Pickup from Depot",
       "code": "afd",
       "type": "bool"
