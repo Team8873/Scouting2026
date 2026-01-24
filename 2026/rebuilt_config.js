@@ -41,9 +41,9 @@ var config_data = `
       "type": "robot",
       "choices": {
         "1": "Red-1<br>",
-        "4": "Blue-1<br>",
+        "4": "Blue-1",
         "2": "Red-2<br>",
-        "5": "Blue-2",
+        "5": "Blue-2<br>",
         "3": "Red-3<br>",
         "6": "Blue-3<br>"
       },
