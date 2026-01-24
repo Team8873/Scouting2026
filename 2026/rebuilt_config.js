@@ -92,9 +92,9 @@ var config_data = `
      "code": "tfo",
      "type": "range",
       "min": "0",
-      "max": "100",
-      "step": "1",
-      "default": "50"
+      "max": "1",
+      "step": ".01",
+      "default": ".5"
     },
     { "name": "Pickup from Floor",
       "code": "tff",
