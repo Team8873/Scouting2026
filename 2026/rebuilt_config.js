@@ -85,16 +85,16 @@ var config_data = `
   "teleop": [
     { "name": "Fuel Fired",
       "code": "tfd",
-      "type": "bool"
+      "type": "counter"
     },
     {
-     name: "Fired Accuracy",
-     code: "tfo",
-     type: "range",
-      min: 0,
-      max: 100,
-      step: 1,
-      default: 50
+     "name": "Fired Accuracy",
+     "code": "tfo",
+     "type": "range",
+      "min": "0",
+      "max": "100",
+      "step": "1",
+      "default": "50"
     },
     { "name": "Pickup from Floor",
       "code": "tff",
