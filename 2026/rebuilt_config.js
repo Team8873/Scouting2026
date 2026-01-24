@@ -65,24 +65,24 @@ var config_data = `
       "code": "ac",
       "type": "counter"
       },
-    { "name": "Pickup from Depot",
+    { "name": "Climb?",
       "code": "afd",
       "type": "bool"
     },
-    { "name": "Pickup from Outpost",
+    { "name": "Fuel Passed",
       "code": "afo",
-      "type": "bool"
-    },
-    { "name": "Pickup from<br>Neutral Zone",
-      "code": "aff",
-      "type": "bool"
-    }
-  ],
-  "teleop": [
-    { "name": "Fuel Scored",
-      "code": "tfs",
       "type": "counter"
     },
+    { "name": "Fuel Picked Up",
+      "code": "aff",
+      "type": "counter"
+    },
+    { "name": "Team Won Auton?",
+      "code": "tfs",
+      "type": "bool"
+    },
+  ],
+  "teleop": [
     { "name": "Pickup from Depot",
       "code": "tfd",
       "type": "bool"
