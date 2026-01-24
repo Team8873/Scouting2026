@@ -85,7 +85,7 @@ var config_data = `
       "code": "aff",
       "type": "counter"
     },
-    { "name": "Team Won Auton?",
+    { "name": "Alliance Won Auton?",
       "code": "tfs",
       "type": "bool"
     }
@@ -105,7 +105,7 @@ var config_data = `
         ".4": "40%",
         ".6": "60%",
         ".8": "80%",
-        "1": "100%"
+        ".1": "100%"
        }
       },
     { "name": "Fuel passed",
@@ -144,7 +144,7 @@ var config_data = `
         "1": "Not Effective<br>",
         "2": "Average<br>",
         "3": "Very Effective<br>",
-        "0": "Not Observed"
+        "0": "Not Observed<br>"
       },
       "defaultValue": "x"
     },
@@ -156,7 +156,7 @@ var config_data = `
         "2": "Average<br>",
         "3": "Good<br>",
         "4": "Excellent<br>",
-        "0": "Did not play defense"
+        "0": "Did not play defense<br>"
       },
       "defaultValue": "x"
     },
