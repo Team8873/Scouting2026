@@ -80,7 +80,7 @@ var config_data = `
     { "name": "Team Won Auton?",
       "code": "tfs",
       "type": "bool"
-    },
+    }
   ],
   "teleop": [
     { "name": "Pickup from Depot",
