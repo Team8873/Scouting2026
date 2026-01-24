@@ -122,7 +122,7 @@ var config_data = `
         "2": "Level 2<br>",
         "3": "Level 3<br>",
         "4": "Attempted<br>",
-        "0": "Not Attempted"
+        "0": "Not Attempted<br>"
       },
       "defaultValue": "x"
     },
@@ -133,13 +133,13 @@ var config_data = `
       "1": "Inside<br>",
       "2": "Outside<br>",
       "3": "Attempted<br>",
-      "0": "Not Attempted"
+      "0": "Not Attempted<br>"
       }
      }
     ],
   "postmatch": [
     { "name": "Driver Skill",
-      "code": "ds",
+      "code": "tc",
       "type": "radio",
       "choices": {
         "1": "Not Effective<br>",
@@ -150,7 +150,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Defense Rating",
-      "code": "dr",
+      "code": "ds",
       "type": "radio",
       "choices": {
         "1": "Below Average<br>",
@@ -162,7 +162,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Speed Rating",
-      "code": "sr",
+      "code": "dr",
       "type": "radio",
       "choices": {
         "1": "1 (slow)<br>",
@@ -173,44 +173,33 @@ var config_data = `
       },
       "defaultValue":"3"
     },
+    { "name": "Crossed Trench",
+      "code": "sr",
+      "type": "bool"
+    },
     { "name": "Crossed Bump",
       "code": "bmp",
       "type": "bool"
     },
-    { "name": "Crossed Trench",
+    { "name": "Died/Immobilized",
       "code": "tre",
       "type": "bool"
     },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
-    },
     { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
+      "code": "die",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
+      "code": "tip",
       "type": "bool"
     },
     { "name": "Was Defended",
-      "code": "def",
+      "code": "all",
       "type": "bool"
-    },
-    { "name": "Excessive Penalties",
-      "code": "pen",
-      "type": "bool"
-    },
-    { "name": "Fuel Percentage",
-      "tooltip": "What percentage of the total fuel for this alliance did this robot score?",
-      "code": "pct",
-      "type": "number",
-      "min": 0,
-      "max": 100
     },
     { "name": "Comments",
-      "code": "co",
+      "code": "def",
       "type": "text",
       "size": 15,
       "maxSize": 55
