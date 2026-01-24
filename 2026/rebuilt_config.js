@@ -40,8 +40,8 @@ var config_data = `
       "code": "r",
       "type": "robot",
       "choices": {
-        "1": "Red-1",
-        "4": "Blue-1",
+        "1": "Red-1<br>",
+        "4": "Blue-1<br>",
         "2": "Red-2<br>",
         "5": "Blue-2<br>",
         "3": "Red-3",
