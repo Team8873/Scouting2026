@@ -83,13 +83,18 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Pickup from Depot",
+    { "name": "Fuel Fired",
       "code": "tfd",
       "type": "bool"
     },
-    { "name": "Pickup from Outpost",
-      "code": "tfo",
-      "type": "bool"
+    {
+     name: "Fired Accuracy",
+     code: "tfo",
+     type: "range",
+      min: 0,
+      max: 100,
+      step: 1,
+      default: 50
     },
     { "name": "Pickup from Floor",
       "code": "tff",
