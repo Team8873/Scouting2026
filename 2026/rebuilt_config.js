@@ -95,19 +95,19 @@ var config_data = `
       "code": "tfd",
       "type": "counter"
     },
-{
-  "name": "Fired Accuracy",
-  "code": "tfo",
-  "type": "radio",
-  "choices": {
-    "0":   { "label": "0%",   "order": 0 },
-    "0.2": { "label": "20%",  "order": 1 },
-    "0.4": { "label": "40%",  "order": 2 },
-    "0.6": { "label": "60%",  "order": 3 },
-    "0.8": { "label": "80%",  "order": 4 },
-    "1":   { "label": "100%", "order": 5 }
-  }
-},
+    {
+     "name": "Fired Accuracy",
+     "code": "tfo",
+     "type": "radio",
+     "choices": {
+        "0": "0%",
+        ".2": "20%",
+        ".4": "40%",
+        ".6": "60%",
+        ".8": "80%",
+        "1": "100%"
+       }
+      },
     { "name": "Fuel passed",
       "code": "tff",
       "type": "counter"
@@ -205,4 +205,3 @@ var config_data = `
     }
   ]
 }`;
-
