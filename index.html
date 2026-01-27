@@ -1,124 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
-  <title>Scouting For Rockefeller Robotics</title>
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-  <script src="resources/js/easy.qrcode.min.js"></script>
-  <script src="resources/js/TBAInterface.js"></script>
-  <script src="resources/js/googleSheets.js"></script>
-  <script src="resources/js/scoutingPASS.js"></script>
-  <link rel="stylesheet" href="resources/css/scoutingPASS.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+	<title>Scouting For Rockefeller Robotics</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+	<script src="resources/js/easy.qrcode.min.js"></script>
+	<script src="resources/js/TBAInterface.js"></script>
+	<script src="resources/js/googleSheets.js"></script>
+	<script src="resources/js/scoutingPASS.js"></script>
+	<script src="2026/rebuilt_config.js"></script>
+	<link rel="stylesheet" href="resources/css/scoutingPASS.css">
 </head>
 
 <body>
-<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
-  <div id="main-panel-holder">
+	<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
+		<div id="main-panel-holder">
 
-    <!-- PREMATCH PANEL -->
-    <div id="prematch" class="main-panel" style="background-color: black;">
-      <h1 class="page_title">Prematch</h1>
-      <p class="match-label">
-        <input type="button" value="Next" onclick="swipePage(1)">
-      </p>
-      <table id="prematch_table" style="font: Roboto"></table>
-    </div>
+			<!-- PREMATCH PANEL -->
+			<div id="prematch" class="main-panel" style="background-color: black;">
+				<h1 class="page_title">Pre-Match</h1>
+				<h2>Pre-Match Info</h2>
+				<p class="match-label">
+					<input type="button" value="Next" onclick="swipePage(1)">
+				</p>
+				<table id="prematch_table">
+					<!-- PRE-MATCH COMPONENTS -->
+				</table>
+			</div>
 
-    <!-- AUTON PANEL -->
-    <div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
-      <h1 class="page_title">Auton</h1>
-      <p class="match-label">
-        <input type="button" value="Prev" onclick="swipePage(-1)">
-        <input type="button" value="Next" onclick="swipePage(1)">
-      </p>
-      <table id="auton_table"></table>
-    </div>
+			<!-- AUTON PANEL -->
+			<div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
+				<h1 class="page_title">Auton</h1>
+				<h2>Autonomous Period</h2>
+				<p class="match-label">
+					<input type="button" value="Prev" onclick="swipePage(-1)">
+					<input type="button" value="Next" onclick="swipePage(1)">
+				</p>
+				<table id="auton_table">
+					<!-- AUTON COMPONENTS -->
+				</table>
+			</div>
 
-    <!-- TELEOP PANEL -->
-    <div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
-      <h1 class="page_title">Teleop</h1>
-      <p class="match-label">
-        <input type="button" value="Prev" onclick="swipePage(-1)">
-        <input type="button" value="Next" onclick="swipePage(1)">
-      </p>
-      <table id="teleop_table"></table>
-    </div>
+			<!-- TELEOP PANEL -->
+			<div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
+				<h1 class="page_title">Teleop</h1>
+				<h2>Teleoperated Period</h2>
+				<p class="match-label">
+					<input type="button" value="Prev" onclick="swipePage(-1)">
+					<input type="button" value="Next" onclick="swipePage(1)">
+				</p>
+				<table id="teleop_table">
+					<!-- TELEOP COMPONENTS -->
+				</table>
+			</div>
 
-    <!-- ENDGAME PANEL -->
-    <div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
-      <h1 class="page_title">Endgame</h1>
-      <p class="match-label">
-        <input type="button" value="Prev" onclick="swipePage(-1)">
-        <input type="button" value="Next" onclick="swipePage(1)">
-      </p>
-      <table id="endgame_table"></table>
-    </div>
+			<!-- ENDGAME PANEL -->
+			<div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
+				<h1 class="page_title">Endgame</h1>
+				<h2>Endgame Period</h2>
+				<p class="match-label">
+					<input type="button" value="Prev" onclick="swipePage(-1)">
+					<input type="button" value="Next" onclick="swipePage(1)">
+				</p>
+				<table id="endgame_table">
+					<!-- ENDGAME COMPONENTS -->
+				</table>
+			</div>
 
-    <!-- POST-MATCH PANEL -->
-    <div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
-      <h1 class="page_title">Post-Match</h1>
-      <p class="match-label">
-        <input type="button" value="Prev" onclick="swipePage(-1)">
-        <input type="button" value="Next" onclick="swipePage(1)">
-      </p>
-      <table id="postmatch_table"></table>
-    </div>
+			<!-- POST-MATCH PANEL -->
+			<div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
+				<h1 class="page_title">Post-Match</h1>
+				<h2>Miscellaneous</h2>
+				<p class="match-label">
+					<input type="button" value="Prev" onclick="swipePage(-1)">
+					<input type="button" value="Next" onclick="swipePage(1)">
+				</p>
+				<table id="postmatch_table">
+					<!-- POST-MATCH COMPONENTS -->
+				</table>
+			</div>
 
-    <!-- QR CODE PANEL -->
-    <div id="qr-code" class="main-panel" style="background-color: white;">
-      <h1 class="page_title">Generate QR Code</h1>
-      <p class="match-label">
-        <input type="button" value="Prev" onclick="swipePage(-1)">
-      </p>
-      <div id="qrcode" style="text-align:center"></div>
-      <p id="data" style="text-align:center"></p>
-    </div>
+			<!-- QR CODE PANEL -->
+			<div id="qr-code" class="main-panel" style="background-color: white;">
+				<h1 class="page_title">Generate QR Code</h1>
+				<h2>QR Code</h2>
+				<p class="match-label">
+					<input type="button" value="Prev" onclick="swipePage(-1)">
+				</p>
+				<div id="qrcode" style="text-align:center"></div>
+				<p id="data" style="text-align:center"></p>
+				<p class="match-label">
+					<input type="button" value="Display Data" onclick="displayData()">
+					<input type="button" value="Copy Data" onclick="copyData()">
+				</p>
+				<div>
+					<button type="submit" class="submitForm">Send to Google Sheets</button>
+					<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
+				</div>
+			</div>
 
-  </div>
-</form>
-
-<script>
-  // JSON-compatible choice data
-  const firedAccuracy = {
-    name: "Fired Accuracy",
-    code: "tfo",
-    type: "radio",
-    choices: {
-      "0":   { label: "0%",   order: 0 },
-      "0.2": { label: "20%",  order: 1 },
-      "0.4": { label: "40%",  order: 2 },
-      "0.6": { label: "60%",  order: 3 },
-      "0.8": { label: "80%",  order: 4 },
-      "1":   { label: "100%", order: 5 }
-    }
-  };
-
-  // Function to render any panel table
-  function renderChoices(tableId, dataObj) {
-    const table = document.getElementById(tableId);
-    Object.entries(dataObj.choices)
-      .sort((a, b) => a[1].order - b[1].order)
-      .forEach(([value, choice]) => {
-        const labelEl = document.createElement("label");
-        const input = document.createElement("input");
-        input.type = "radio";
-        input.name = dataObj.code;
-        input.value = value;
-
-        labelEl.appendChild(input);
-        labelEl.appendChild(document.createTextNode(` ${choice.label}`));
-        table.appendChild(labelEl);
-        table.appendChild(document.createElement("br"));
-      });
-  }
-
-  // Render all panels
-  renderChoices("prematch_table", firedAccuracy);
-  renderChoices("auton_table", firedAccuracy);
-  renderChoices("teleop_table", firedAccuracy);
-  renderChoices("endgame_table", firedAccuracy);
-  renderChoices("postmatch_table", firedAccuracy);
-</script>
+		</div>
+	</form>
 </body>
 </html>
