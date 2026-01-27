@@ -95,18 +95,18 @@ var config_data = `
       "code": "tfd",
       "type": "counter"
     },
-    {
+{
   "name": "Fired Accuracy",
   "code": "tfo",
   "type": "radio",
-  "choices": [
-    { "value": 0,   "label": "0%" },
-    { "value": 0.2, "label": "20%" },
-    { "value": 0.4, "label": "40%" },
-    { "value": 0.6, "label": "60%" },
-    { "value": 0.8, "label": "80%" },
-    { "value": 1,   "label": "100%" }
-  ]
+  "choices": {
+    "0":   { "label": "0%",   "order": 0 },
+    "0.2": { "label": "20%",  "order": 1 },
+    "0.4": { "label": "40%",  "order": 2 },
+    "0.6": { "label": "60%",  "order": 3 },
+    "0.8": { "label": "80%",  "order": 4 },
+    "1":   { "label": "100%", "order": 5 }
+  }
 },
     { "name": "Fuel passed",
       "code": "tff",
