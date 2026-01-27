@@ -107,7 +107,6 @@ var config_data = `
     { "value": 0.8, "label": "80%" },
     { "value": 1,   "label": "100%" }
   ]
- }
 },
     { "name": "Fuel passed",
       "code": "tff",
