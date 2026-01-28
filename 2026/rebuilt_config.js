@@ -57,9 +57,10 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Fired",
-      "code": "afs",
-      "type": "counter"
+ {  "name": "Fuel Fired",
+    "code": "afs",
+    "type": "counter",
+    "buttons": [1, 5, 10, -1, -5] 
     },
     { "name": "Fuel Acc",
       "code": "ac",
