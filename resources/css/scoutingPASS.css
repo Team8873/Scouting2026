@@ -178,14 +178,14 @@ h2{
     background-color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
-    color:rgb(255, 0, 234);
+    color: rgb(255, 59, 18);
 }
 
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: rgb(255, 0, 234);
+    color: rgb(255, 59, 18);
 }
 
 .undoButton, .flipButton {
@@ -199,7 +199,7 @@ h2{
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: black;
-    color: rgb(0, 255, 0);
+    color: rgb(255, 59, 18);
     padding: 10px;
 }
 
@@ -207,7 +207,7 @@ h2{
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: rgb(0, 255, 0);
+    color: rgb(255, 59, 18);
 
 }
 
@@ -267,8 +267,3 @@ input {
     font-family:'Lucida Console', 'monospace';
     text-align: justify;
 }
-
-
-
-
-
