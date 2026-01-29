@@ -34,7 +34,7 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: rgb(255, 0, 234);
+    border-color: rgb(255, 59, 18);
 }
 
 .button {
@@ -267,6 +267,7 @@ input {
     font-family:'Lucida Console', 'monospace';
     text-align: justify;
 }
+
 
 
 
