@@ -147,7 +147,7 @@ var config_data = `
         "3": "Very Effective<br>",
         "0": "Not Observed<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Defense Rating",
       "code": "ds",
