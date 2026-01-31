@@ -98,26 +98,26 @@ html, body{
 #auton{
 background-color:#000030 ;  
 color:yellow;
-border-color:rgb(0, 255, 0);
+border-color:rgb(108, 207, 152);
 }
 
 #teleop{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(0, 255, 0);
+border-color:rgb(108, 207, 152);
 }
 
 #endgame{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(0, 255, 0);
+border-color:rgb(108, 207, 152);
 
 }
 
 #postmatch{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(0, 255, 0);
+border-color:rgb(108, 207, 152);
 }
 
 
