@@ -43,7 +43,7 @@ html, body{
 }
 
 #autonHeader1, #endgameHeader1, #teleopHeader1, #teleopHeader2{
-    color: yellow;
+    color: rgb(255, 145, 19);
     border-color: rgb(108, 207, 152);
     border-width: 4px;
 }
@@ -117,7 +117,7 @@ border-color:rgb(108, 207, 152);
 #postmatch{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(108, 207, 152);
+border-color:rgb(108, 207, 152)
 }
 
 
