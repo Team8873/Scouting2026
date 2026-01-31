@@ -44,24 +44,24 @@ html, body{
 
 #autonHeader1, #endgameHeader1, #teleopHeader1, #teleopHeader2{
     color: yellow;
-    border-color: rgb(255, 59, 18);
+    border-color: rgb(108, 207, 152);
     border-width: 4px;
 }
 
 #postmatchHeader{
     border-width: 4px;
-    border-color: rgb(255, 59, 18);
+    border-color: rgb(108, 207, 152);
     color:yellow;
 }
 
 #prematchHeader1{
     color: yellow;
-    border-color: rgb(0, 255, 0);
+    border-color: rgb(108, 207, 152);
     border-width: 4px;
 }
 #prematchHeader2{
     color: yellow;
-    border-color: rgb(255, 0, 234);
+    border-color: rgb(108, 207, 152);
     border-width: 4px;
 }
 #qrHeader1, #qrHeader2 {
@@ -267,6 +267,7 @@ input {
     font-family:'Lucida Console', 'monospace';
     text-align: justify;
 }
+
 
 
 
