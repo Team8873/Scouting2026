@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "ScoutingForMP",
-  "page_title": "REBUILT",
+  "page_title": "REBUILT ing",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
