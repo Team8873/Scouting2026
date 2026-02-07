@@ -1,3 +1,7 @@
+/* ===============================
+   CONFIG DATA (PURE JSON)
+   =============================== */
+
 var config_data = `
 {
   "dataFormat": "tsv",
@@ -237,9 +241,9 @@ var config_data = `
    COUNTER BUTTON EXTENSION
    =============================== */
 
-(function () {
+function extendCounters() {
   if (typeof window.makeCounter !== "function") {
-    console.error("makeCounter not found — ensure scoutingPASS.js loads first");
+    setTimeout(extendCounters, 50); // Retry until makeCounter exists
     return;
   }
 
@@ -248,10 +252,7 @@ var config_data = `
   window.makeCounter = function (component, table, page) {
     const row = originalMakeCounter(component, table, page);
 
-    if (
-      component.type !== "counter" ||
-      !Array.isArray(component.buttons)
-    ) {
+    if (component.type !== "counter" || !Array.isArray(component.buttons)) {
       return row;
     }
 
@@ -280,4 +281,7 @@ var config_data = `
     row.appendChild(buttonWrap);
     return row;
   };
-})();
+}
+
+// Initialize the counter extension
+extendCounters();
