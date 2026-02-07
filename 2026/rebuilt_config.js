@@ -5,20 +5,23 @@ var config_data = `
   "page_title": "REBUILT",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    {
+      "name": "Scouter Initials",
       "code": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
       "required": "true"
     },
-    { "name": "Event",
+    {
+      "name": "Event",
       "code": "e",
       "type": "event",
       "defaultValue": "2026ilch",
       "required": "true"
     },
-    { "name": "Match Level",
+    {
+      "name": "Match Level",
       "code": "l",
       "type": "level",
       "choices": {
@@ -29,14 +32,16 @@ var config_data = `
       "defaultValue": "qm",
       "required": "true"
     },
-    { "name": "Match #",
+    {
+      "name": "Match #",
       "code": "m",
       "type": "match",
       "min": 1,
       "max": 150,
       "required": "true"
     },
- { "name": "Robot",
+    {
+      "name": "Robot",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -49,7 +54,8 @@ var config_data = `
       },
       "required": "true"
     },
-    { "name": "Team #",
+    {
+      "name": "Team #",
       "code": "t",
       "type": "team",
       "min": 1,
@@ -57,88 +63,98 @@ var config_data = `
     }
   ],
   "auton": [
- {  "name": "Fuel Fired",
-    "code": "afs",
-    "type": "counter",
-    "buttons": [1, 5, 10, -1, -5] 
+    {
+      "name": "Fuel Fired",
+      "code": "afs",
+      "type": "counter",
+      "buttons": [1, 5, 10, -1, -5]
     },
-    { "name": "Fuel Acc",
+    {
+      "name": "Fuel Acc",
       "code": "ac",
       "type": "radio",
-       "choices": {
+      "choices": {
         "0": "0%",
-        ".2": "20%",
-        ".4": "40%",
-        ".6": "60%",
-        ".8": "80%",
-        ".1": "100%"
-       }
-      },
-    { "name": "Climb?",
+        "0.2": "20%",
+        "0.4": "40%",
+        "0.6": "60%",
+        "0.8": "80%",
+        "1": "100%"
+      }
+    },
+    {
+      "name": "Climb?",
       "code": "afd",
       "type": "bool"
     },
-    { "name": "Fuel Passed",
+    {
+      "name": "Fuel Passed",
       "code": "afo",
       "type": "counter"
     },
-    { "name": "Fuel Picked Up",
+    {
+      "name": "Fuel Picked Up",
       "code": "aff",
       "type": "counter"
     },
-    { "name": "Alliance Won Auton?",
+    {
+      "name": "Alliance Won Auton?",
       "code": "tfs",
       "type": "bool"
     }
   ],
   "teleop": [
-    { "name": "Fuel Fired",
+    {
+      "name": "Fuel Fired",
       "code": "tfd",
       "type": "counter"
     },
     {
-     "name": "Fired Accuracy",
-     "code": "tfo",
-     "type": "radio",
-     "choices": {
+      "name": "Fired Accuracy",
+      "code": "tfo",
+      "type": "radio",
+      "choices": {
         "0": "0%",
-        ".2": "20%",
-        ".4": "40%",
-        ".6": "60%",
-        ".8": "80%",
+        "0.2": "20%",
+        "0.4": "40%",
+        "0.6": "60%",
+        "0.8": "80%",
         "1": "100%"
-       }
-      },
-    { "name": "Fuel passed",
+      }
+    },
+    {
+      "name": "Fuel Passed",
       "code": "tff",
       "type": "counter"
     }
   ],
   "endgame": [
-    { "name": "Climb",
+    {
+      "name": "Climb",
       "code": "pnz",
       "type": "radio",
       "choices": {
         "1": "Level 1<br>",
         "2": "Level 2<br>",
         "3": "Level 3<br>",
-        ".5": "Attempted but Failed<br>",
+        "0.5": "Attempted but Failed<br>",
         "0": "Not Attempted<br>"
-      },
-      "defaultValue": "x"
+      }
     },
-    { "name": "Climb Position",
+    {
+      "name": "Climb Position",
       "code": "poa",
       "type": "radio",
       "choices": {
-      "1": "Inside<br>",
-      "2": "Outside<br>",
-      "0": "Not Attempted<br>"
+        "1": "Inside<br>",
+        "2": "Outside<br>",
+        "0": "Not Attempted<br>"
       }
-     }
-    ],
+    }
+  ],
   "postmatch": [
-    { "name": "Driver Skill",
+    {
+      "name": "Driver Skill",
       "code": "tc",
       "type": "radio",
       "choices": {
@@ -149,7 +165,8 @@ var config_data = `
       },
       "defaultValue": "0"
     },
-    { "name": "Defense Rating",
+    {
+      "name": "Defense Rating",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -158,10 +175,10 @@ var config_data = `
         "3": "Good<br>",
         "4": "Excellent<br>",
         "0": "Did not play defense<br>"
-      },
-      "defaultValue": "x"
+      }
     },
-    { "name": "Speed Rating",
+    {
+      "name": "Speed Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
@@ -171,38 +188,96 @@ var config_data = `
         "4": "4<br>",
         "5": "5 (fast)"
       },
-      "defaultValue":"3"
+      "defaultValue": "3"
     },
-    { "name": "Crossed Trench",
+    {
+      "name": "Crossed Trench",
       "code": "sr",
       "type": "bool"
     },
-    { "name": "Crossed Bump",
+    {
+      "name": "Crossed Bump",
       "code": "bmp",
       "type": "bool"
     },
-    { "name": "Died/Immobilized",
+    {
+      "name": "Died/Immobilized",
       "code": "tre",
       "type": "bool"
     },
-    { "name": "Tippy<br>(almost tipped over)",
+    {
+      "name": "Tippy<br>(almost tipped over)",
       "code": "die",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
+    {
+      "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Was Defended",
+    {
+      "name": "Was Defended",
       "code": "all",
       "type": "bool"
     },
-    { "name": "Comments",
+    {
+      "name": "Comments",
       "code": "def",
       "type": "text",
       "size": 15,
       "maxSize": 55
     }
   ]
-}`;
+}
+`;
+
+
+/* ===============================
+   COUNTER BUTTON EXTENSION
+   =============================== */
+
+(function () {
+  if (typeof window.makeCounter !== "function") {
+    console.error("makeCounter not found — ensure scoutingPASS.js loads first");
+    return;
+  }
+
+  const originalMakeCounter = window.makeCounter;
+
+  window.makeCounter = function (component, table, page) {
+    const row = originalMakeCounter(component, table, page);
+
+    if (
+      component.type !== "counter" ||
+      !Array.isArray(component.buttons)
+    ) {
+      return row;
+    }
+
+    const input = row.querySelector("input[type='number']");
+    if (!input) return row;
+
+    const buttonWrap = document.createElement("div");
+    buttonWrap.style.marginTop = "6px";
+
+    component.buttons.forEach(step => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = step > 0 ? `+${step}` : step;
+      btn.style.margin = "2px";
+
+      btn.addEventListener("click", () => {
+        const current = parseInt(input.value || "0", 10);
+        const next = Math.max(0, current + step);
+        input.value = next;
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+
+      buttonWrap.appendChild(btn);
+    });
+
+    row.appendChild(buttonWrap);
+    return row;
+  };
+})();
