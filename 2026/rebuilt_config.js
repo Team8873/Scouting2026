@@ -70,9 +70,8 @@ var config_data = `
     {
   "name": "Fuel Fired",
   "code": "afs",
-  "type": "counter",
-  "value": 0,
-  "increment": 2
+  "type": "counter"
+  "counter.value" += 2;
 },
     {
       "name": "Fuel Acc",
