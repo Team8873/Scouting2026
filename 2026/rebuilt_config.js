@@ -67,12 +67,13 @@ var config_data = `
     }
   ],
   "auton": [
-    {
-  "name": "Fuel Fired",
-  "code": "afs",
-  "type": "counter"
-  "counter.value" += 2;
-},
+    { "name": "Fuel Scored",
+      "code": "afs",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
+      "type": "counter"
+    },
     {
       "name": "Fuel Acc",
       "code": "ac",
