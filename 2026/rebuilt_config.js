@@ -72,7 +72,7 @@ var config_data = `
   "code": "afs",
   "type": "counter",
   "value": 0,
-  "increment": 1
+  "increment": 2
 },
     {
       "name": "Fuel Acc",
