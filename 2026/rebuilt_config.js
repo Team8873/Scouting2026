@@ -67,7 +67,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Scored",
+ { "name": "Fuel Scored",
       "code": "afs",
       "expectedMax": 32,
       "altInc1": 10,
