@@ -74,7 +74,6 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
-      "defaultValue": "0"
     {
       "name": "Fuel Acc",
       "code": "ac",
