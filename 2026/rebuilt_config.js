@@ -74,6 +74,7 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
+      "defaultValue": "0"
     {
       "name": "Fuel Acc",
       "code": "ac",
@@ -84,8 +85,9 @@ var config_data = `
         "0.4": "40%",
         "0.6": "60%",
         "0.8": "80%",
-        "1": "10000%"
+        "1": "100%"
       }
+      "defaultValue": "0"
     },
     {
       "name": "Climb?",
@@ -100,6 +102,7 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
+      "defaultValue": "0"
     {
       "name": "Fuel Picked Up",
       "code": "aff",
@@ -108,6 +111,7 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
+      "defaultValue": "0"
     {
       "name": "Alliance Won Auton?",
       "code": "tfs",
