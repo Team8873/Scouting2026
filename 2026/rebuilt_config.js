@@ -95,11 +95,17 @@ var config_data = `
     {
       "name": "Fuel Passed",
       "code": "afo",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     {
       "name": "Fuel Picked Up",
       "code": "aff",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     {
@@ -112,6 +118,9 @@ var config_data = `
     {
       "name": "Fuel Fired",
       "code": "tfd",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     {
@@ -130,6 +139,9 @@ var config_data = `
     {
       "name": "Fuel Passed",
       "code": "tff",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     }
   ],
