@@ -970,101 +970,95 @@ function qr_clear() {
 }
 
 function clearForm() {
-  var match = 0;
-  var e = 0;
 
-  if (pitScouting) {
-    swipePage(-1);
-  } else {
+  if (!pitScouting) {
     swipePage(-5);
 
-    // Increment match
-    match = parseInt(document.getElementById("input_m").value)
-    if (match == NaN) {
-      document.getElementById("input_m").value = ""
+    let matchField = document.getElementById("input_m");
+    let match = parseInt(matchField.value);
+
+    if (!isNaN(match)) {
+      matchField.value = match + 1;
     } else {
-      document.getElementById("input_m").value = match + 1
+      matchField.value = "";
     }
 
-    // Robot
-    resetRobot()
+    resetRobot();
+  } else {
+    swipePage(-1);
   }
 
-  // Clear XY coordinates
-  inputs = document.querySelectorAll("[id*='XY_']");
-  for (e of inputs) {
-    code = e.id.substring(3)
-    e.value = "[]"
-  }
+  // Clear XY values
+  document.querySelectorAll("[id^='XY_']").forEach(el => {
+    el.value = "[]";
+  });
 
-  inputs = document.querySelectorAll("[id*='input_']");
-  for (e of inputs) {
-    code = e.id.substring(6)
+  // Clear all inputs
+  document.querySelectorAll("[id^='input_']").forEach(el => {
 
-    // Don't clear key fields
-    if (code == "m") continue
-    if (code.substring(0, 2) == "r_") continue
-    if (code.substring(0, 2) == "l_") continue
-    if (code == "e") continue
-    if (code == "s") continue
+    let code = el.id.substring(6);
 
-    if (e.className == "clickableImage") {
-      e.value = "[]";
-      continue;
+    // Skip key fields
+    if (["m", "e", "s"].includes(code)) return;
+    if (code.startsWith("r_")) return;
+    if (code.startsWith("l_")) return;
+
+    if (el.classList.contains("clickableImage")) {
+      el.value = "[]";
+      return;
     }
 
-    radio = code.indexOf("_")
-    if (radio > -1) {
-      var baseCode = code.substr(0, radio)
-      if (e.checked) {
-        e.checked = false
-        document.getElementById("display_" + baseCode).value = ""
-      }
-      var defaultValue = document.getElementById("default_" + baseCode).value
-      if (defaultValue != "") {
-        if (defaultValue == e.value) {
-          e.checked = true
-          document.getElementById("display_" + baseCode).value = defaultValue
-        }
-      }
-    } else {
-      if (e.type == "number" || e.type == "text" || e.type == "hidden") {
-        if ((e.className == "counter") ||
-          (e.className == "timer") ||
-          (e.className == "cycle")) {
-          e.value = 0
-          if (e.className == "timer" || e.className == "cycle") {
-            // Stop interval
-            timerStatus = document.getElementById("status_" + code);
-            startButton = document.getElementById("start_" + code);
-            intervalIdField = document.getElementById("intervalId_" + code);
-            var intervalId = intervalIdField.value;
-            timerStatus.value = 'stopped';
-            startButton.innerHTML = "Start";
-            if (intervalId != '') {
-              clearInterval(intervalId);
-            }
-            intervalIdField.value = '';
-            if (e.className == "cycle") {
-              document.getElementById("cycletime_" + code).value = "[]"
-              document.getElementById("display_" + code).value = ""
-            }
-          }
-        } else {
-          e.value = ""
-        }
-      } else if (e.type == "checkbox") {
-        if (e.checked == true) {
-          e.checked = false
-        }
-      } else {
-        console.log("unsupported input type")
-      }
+    if (el.type === "checkbox") {
+      el.checked = false;
+      return;
     }
-  }
-  drawFields()
+
+    if (el.classList.contains("counter") ||
+        el.classList.contains("timer") ||
+        el.classList.contains("cycle")) {
+
+      el.value = 0;
+
+      if (el.classList.contains("timer") ||
+          el.classList.contains("cycle")) {
+
+        let status = document.getElementById("status_" + code);
+        let startButton = document.getElementById("start_" + code);
+        let intervalField = document.getElementById("intervalId_" + code);
+
+        if (intervalField && intervalField.value !== "") {
+          clearInterval(intervalField.value);
+        }
+
+        if (status) status.value = "stopped";
+        if (startButton) startButton.value = "Start";
+        if (intervalField) intervalField.value = "";
+
+        if (el.classList.contains("cycle")) {
+          let cycleTime = document.getElementById("cycletime_" + code);
+          let display = document.getElementById("display_" + code);
+
+          if (cycleTime) cycleTime.value = "[]";
+          if (display) display.value = "";
+        }
+      }
+
+      return;
+    }
+
+    if (el.type === "radio") {
+      el.checked = false;
+      return;
+    }
+
+    if (el.type === "text" || el.type === "number" || el.type === "hidden") {
+      el.value = "";
+    }
+
+  });
+
+  drawFields();
 }
-
 function startTouch(e) {
   initialX = e.touches[0].screenX;
 };
