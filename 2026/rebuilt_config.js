@@ -67,12 +67,13 @@ var config_data = `
     }
   ],
   "auton": [
- { "name": "Fuel Scored",
+ { "name": "Fuel Fired",
       "code": "afs",
       "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
-      "type": "counter"
+      "type": "counter",
+      "required": "true"
     },
     {
       "name": "Fuel Acc",
@@ -84,13 +85,15 @@ var config_data = `
         "0.4": "40%",
         "0.6": "60%",
         "0.8": "80%",
-        "1": "100%"
+        "1": "100%",
+         "required": "true"
       }
     },
     {
       "name": "Climb?",
       "code": "afd",
-      "type": "bool"
+      "type": "bool",
+      "required": "true"
     },
     {
       "name": "Fuel Passed",
@@ -98,7 +101,8 @@ var config_data = `
       "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
-      "type": "counter"
+      "type": "counter",
+      "required": "true"
     },
     {
       "name": "Fuel Picked Up",
@@ -106,12 +110,14 @@ var config_data = `
       "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
-      "type": "counter"
+      "type": "counter",
+      "required": "true"
     },
     {
       "name": "Alliance Won Auton?",
       "code": "tfs",
-      "type": "bool"
+      "type": "bool",
+      "required": "true"
     }
   ],
   "teleop": [
