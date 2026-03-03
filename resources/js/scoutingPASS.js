@@ -11,7 +11,7 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
-var pitScouting = false;
+var pitScouting = true;
 var checkboxAs = 'YN';
 var ColWidth = '200px';
 
@@ -1481,3 +1481,4 @@ window.onload = function () {
     }
   }
 };
+
