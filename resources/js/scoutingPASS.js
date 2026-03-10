@@ -11,7 +11,7 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
-var pitScouting = true;
+var pitScouting = false;
 var checkboxAs = 'YN';
 var ColWidth = '200px';
 
@@ -805,6 +805,7 @@ function configure() {
   idx = 0;
   ac.forEach(element => {
     idx = addElement(at, idx, element);
+  buildRequiredElementList(element);
   });
 
   // Configure teleop screen
@@ -813,6 +814,7 @@ function configure() {
   idx = 0;
   tc.forEach(element => {
     idx = addElement(tt, idx, element);
+  buildRequiredElementList(element);
   });
 
   // Configure endgame screen
@@ -821,6 +823,7 @@ function configure() {
   idx = 0;
   egc.forEach(element => {
     idx = addElement(egt, idx, element);
+  buildRequiredElementList(element);
   });
 
   // Configure postmatch screen
@@ -829,6 +832,7 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
+  buildRequiredElementList(element);
   });
 
   if (!enableGoogleSheets) {
