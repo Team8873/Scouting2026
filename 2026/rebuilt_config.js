@@ -90,12 +90,6 @@ var config_data = `
       "required": "true"
     },
     {
-      "name": "Climb?",
-      "code": "afd",
-      "type": "bool",
-      "required": "true"
-    },
-    {
       "name": "Fuel Passed",
       "code": "afo",
       "expectedMax": 32,
@@ -110,7 +104,12 @@ var config_data = `
       "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
-      "type": "counter",
+      "type": "counter"
+    },
+    {
+      "name": "Climb?",
+      "code": "afd",
+      "type": "bool",
       "required": "true"
     },
     {
@@ -140,7 +139,8 @@ var config_data = `
         "0.6": "60%",
         "0.8": "80%",
         "1": "100%"
-      }
+    },
+      "required": "true"
     },
     {
       "name": "Fuel Passed",
@@ -162,7 +162,8 @@ var config_data = `
         "3": "Level 3<br>",
         "0.5": "Attempted but Failed<br>",
         "0": "Not Attempted<br>"
-      }
+    },
+      "required": "true"
     },
     {
       "name": "Climb Position",
@@ -172,7 +173,8 @@ var config_data = `
         "1": "Inside<br>",
         "2": "Outside<br>",
         "0": "Not Attempted<br>"
-      }
+    },
+      "required": "true"
     }
   ],
   "postmatch": [
@@ -185,7 +187,7 @@ var config_data = `
         "2": "Average<br>",
         "3": "Very Effective<br>",
         "0": "Not Observed<br>"
-      },
+    },
       "defaultValue": "0"
     },
     {
@@ -248,8 +250,8 @@ var config_data = `
       "name": "Comments",
       "code": "def",
       "type": "text",
-      "size": 15,
-      "maxSize": 55
+      "size": 30,
+      "maxSize": 100
     }
   ]
 }
