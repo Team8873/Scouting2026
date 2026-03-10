@@ -175,7 +175,7 @@ var config_data = `
         "0": "Not Attempted<br>"
     },
       "required": "true"
-    }
+    },
   ],
   "postmatch": [
     {
@@ -250,7 +250,7 @@ var config_data = `
       "name": "Comments",
       "code": "def",
       "type": "text",
-      "size": 30,
+      "size": 10,
       "maxSize": 100
     }
   ]
