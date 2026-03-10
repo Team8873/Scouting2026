@@ -87,8 +87,6 @@ var config_data = `
         "0.8": "80%",
         "1": "100%",
     },
-    "required": "true"
-    },
     {
       "name": "Climb?",
       "code": "afd",
