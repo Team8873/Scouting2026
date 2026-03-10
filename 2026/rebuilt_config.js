@@ -86,7 +86,8 @@ var config_data = `
         "0.6": "60%",
         "0.8": "80%",
         "1": "100%"
-    }
+    },
+      "required": "true"
     },
     {
       "name": "Climb?",
