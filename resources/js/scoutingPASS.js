@@ -23,7 +23,13 @@ var options = {
 };
 
 // Built from the JSON
-var requiredFields = []; //["e", "m", "l", "r", "s", "as"];
+var requiredFields = {
+  prematch: [],
+  auton: [],
+  teleop: [],
+  endgame: [],
+  postmatch: []
+};
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -729,10 +735,10 @@ function addElement(table, idx, data) {
   return idx
 }
 
-function buildRequiredElementList(element) {
-	if (element.required == "true") {
-		requiredFields.push(element.code);
-	}
+function buildRequiredElementList(element, page) {
+  if (element.required == "true") {
+    requiredFields[page].push(element.code);
+  }
 }
 
 function configure() {
@@ -796,7 +802,7 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
-	buildRequiredElementList(element);
+	buildRequiredElementList(element, "prematch");
   });
 
   // Configure auton screen
@@ -805,7 +811,7 @@ function configure() {
   idx = 0;
   ac.forEach(element => {
     idx = addElement(at, idx, element);
-  buildRequiredElementList(element);
+  buildRequiredElementList(element, "auton");
   });
 
   // Configure teleop screen
@@ -814,7 +820,7 @@ function configure() {
   idx = 0;
   tc.forEach(element => {
     idx = addElement(tt, idx, element);
-  buildRequiredElementList(element);
+  buildRequiredElementList(element, "teleop");
   });
 
   // Configure endgame screen
@@ -823,7 +829,7 @@ function configure() {
   idx = 0;
   egc.forEach(element => {
     idx = addElement(egt, idx, element);
-  buildRequiredElementList(element);
+  buildRequiredElementList(element, endgame);
   });
 
   // Configure postmatch screen
@@ -832,7 +838,7 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
-  buildRequiredElementList(element);
+  buildRequiredElementList(element, postmatch);
   });
 
   if (!enableGoogleSheets) {
@@ -856,11 +862,15 @@ function getLevel(){
 return document.forms.scoutingForm.l.value
 }
 
-
 function validateData() {
+
+  const pageNames = ["prematch","auton","teleop","endgame","postmatch"];
+  const currentPage = pageNames[slide];
+
   var ret = true;
   var errStr = "";
-  for (rf of requiredFields) {
+
+  for (rf of requiredFields[currentPage]) {
     var thisRF = document.forms.scoutingForm[rf];
 	if (thisRF.value == "[]" || thisRF.value.length == 0) {
 	  if (rf == "as") {
