@@ -986,20 +986,23 @@ function qr_clear() {
 
 function clearForm() {
 
+function clearForm() {
+
   if (!pitScouting) {
-goToPage(0);
+
+    swipePage(-slide, true);
 
     let matchField = document.getElementById("input_m");
     let match = parseInt(matchField.value);
 
     if (!isNaN(match)) {
       matchField.value = match + 1;
-    } else {
-      matchField.value = "";
     }
 
     resetRobot();
-  } else {
+  }
+
+ else {
     swipePage(-1);
   }
 
@@ -1097,21 +1100,30 @@ function moveTouch(e) {
   initialX = null;
 };
 
-function goToPage(page) {
-  const slides = document.getElementById("main-panel-holder").children;
+function swipePage(increment, force=false) {
 
-  if (page < 0 || page >= slides.length) return;
+  if (force || qr_regenerate() === true) {
 
-  slides[slide].style.display = "none";
-  slide = page;
+    const slides = document.getElementById("main-panel-holder").children;
 
-  window.scrollTo(0, 0);
-  slides[slide].style.display = "table";
+    if (slide + increment < slides.length && slide + increment >= 0) {
 
-  document.getElementById('data').innerHTML = "";
-  document.getElementById('copyButton').setAttribute('value','Copy Data');
+      slides[slide].style.display = "none";
+
+      slide += increment;
+
+      window.scrollTo(0,0);
+
+      slides[slide].style.display = "block";
+
+      document.getElementById("data").innerHTML = "";
+      document.getElementById("copyButton").setAttribute("value","Copy Data");
+
+    }
+
+  }
+
 }
-
 function drawFields(name) {
   var fields = document.querySelectorAll("[id*='canvas_']");
 
@@ -1497,4 +1509,4 @@ window.onload = function () {
     }
   }
 };
-
+}
