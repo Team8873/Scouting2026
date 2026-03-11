@@ -173,8 +173,7 @@ var config_data = `
         "1": "Inside<br>",
         "2": "Outside<br>",
         "0": "Not Attempted<br>"
-    },
-      "required": "true"
+    }
     },
   ],
   "postmatch": [
