@@ -961,22 +961,23 @@ function updateQRHeader() {
 
 
 function qr_regenerate() {
-  // Validate required pre-match date (event, match, level, robot, scouter)
+
+  // Validate required pre-match data
   if (!pitScouting) {  
-    if (validateData() == False) {
+    if (validateData() == false) {
       // Don't allow a swipe until all required data is filled in
-      return False
+      return false;
     }
   }
 
   // Get data
-  data = getData(dataFormat)
+  let data = getData(dataFormat);
 
   // Regenerate QR Code
-  qr.makeCode(data)
+  qr.makeCode(data);
 
-  updateQRHeader()
-  return true
+  updateQRHeader();
+  return true;
 }
 
 function qr_clear() {
