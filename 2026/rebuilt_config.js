@@ -14,14 +14,14 @@ var config_data = `
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
-      "required": true
+      "required": "true"
     },
     {
       "name": "Event",
       "code": "e",
       "type": "event",
       "defaultValue": "2026ilch",
-      "required": true
+      "required": "true"
     },
     {
       "name": "Match Level",
@@ -33,7 +33,7 @@ var config_data = `
         "f": "Finals"
       },
       "defaultValue": "qm",
-      "required": true
+      "required": "true"
     },
     {
       "name": "Match #",
@@ -41,7 +41,7 @@ var config_data = `
       "type": "match",
       "min": 1,
       "max": 150,
-      "required": true
+      "required": "true"
     },
     {
       "name": "Robot",
@@ -55,7 +55,7 @@ var config_data = `
         "r3": "Red-3",
         "b3": "Blue-3"
       },
-      "required": true
+      "required": "true"
     },
     {
       "name": "Team #",
@@ -73,7 +73,7 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter",
-      "required": true
+      "required": "true"
     },
     {
       "name": "Fuel Acc",
@@ -87,7 +87,7 @@ var config_data = `
         "0.8": "80%",
         "1.0": "100%"
       },
-      "required": true
+      "required": "true"
     },
     {
       "name": "Fuel Passed",
@@ -96,7 +96,7 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter",
-      "required": true
+      "required": "true"
     },
     {
       "name": "Fuel Picked Up",
@@ -110,13 +110,13 @@ var config_data = `
       "name": "Climb?",
       "code": "afd",
       "type": "bool",
-      "required": true
+      "required": "true"
     },
     {
       "name": "Alliance Won Auton?",
       "code": "tfs",
       "type": "bool",
-      "required": true
+      "required": "true"
     }
   ],
   "teleop": [
@@ -140,7 +140,7 @@ var config_data = `
         "0.8": "80%",
         "1.0": "100%"
       },
-      "required": true
+      "required": "true"
     },
     {
       "name": "Fuel Passed",
