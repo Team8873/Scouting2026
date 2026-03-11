@@ -984,7 +984,6 @@ function qr_clear() {
   qr.clear()
 }
 
-function clearForm() {
 
 function clearForm() {
 
@@ -1005,7 +1004,6 @@ function clearForm() {
  else {
     swipePage(-1);
   }
-}
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
     el.value = "[]";
