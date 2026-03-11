@@ -162,8 +162,7 @@ var config_data = `
         "3": "Level 3<br>",
         "0.5": "Attempted but Failed<br>",
         "0": "Not Attempted<br>"
-    },
-      "required": "true"
+    }    
     },
     {
       "name": "Climb Position",
