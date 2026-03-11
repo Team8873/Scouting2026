@@ -1101,18 +1101,19 @@ function moveTouch(e) {
   initialX = null;
 };
 
-function swipePage(increment) {
-  if (qr_regenerate() == true) {
-    slides = document.getElementById("main-panel-holder").children
-    if (slide + increment < slides.length && slide + increment >= 0) {
-      slides[slide].style.display = "none";
-      slide += increment;
-      window.scrollTo(0, 0);
-      slides[slide].style.display = "table";
-      document.getElementById('data').innerHTML = "";
-      document.getElementById('copyButton').setAttribute('value','Copy Data');
-    }
-  }
+function goToPage(page) {
+  const slides = document.getElementById("main-panel-holder").children;
+
+  if (page < 0 || page >= slides.length) return;
+
+  slides[slide].style.display = "none";
+  slide = page;
+
+  window.scrollTo(0, 0);
+  slides[slide].style.display = "table";
+
+  document.getElementById('data').innerHTML = "";
+  document.getElementById('copyButton').setAttribute('value','Copy Data');
 }
 
 function drawFields(name) {
