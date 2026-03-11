@@ -18,7 +18,7 @@ html, body {
     margin: 0;
     padding: 0;
     color: rgb(178, 57, 27);
-    background-color: hsl(0, 0%, 0%);
+    background-color: rgb(8, 57, 172);
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -41,9 +41,7 @@ html, body {
    =============================== */
 .button, #nextButton1, #nextButton2, #nextButton3, #nextButton4,
 #nextButton5, #nextButton6, #nextButton7, #nextButton8, #nextButton9, #nextButton10,
-.clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton,
-#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6,
-#prevButton7, #prevButton8, #prevButton9 {
+.clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton{
     font-family: Alexis;
     padding: 10px;
     background-color: black;
@@ -57,7 +55,8 @@ html, body {
     margin-left: 20px;
 }
 
-#prevButton3, #prevButton4, #prevButton5, #prevButton6, #prevButton7, #prevButton8, #prevButton9 {
+#prevButton3, #prevButton4, #prevButton5, #prevButton6, #prevButton7, #prevButton8, #prevButton9,
+#prevButton1, #prevButton2 {
     color: rgb(0, 255, 30);
 }
 
