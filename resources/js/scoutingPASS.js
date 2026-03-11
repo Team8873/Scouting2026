@@ -963,9 +963,9 @@ function updateQRHeader() {
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
   if (!pitScouting) {  
-    if (validateData() == false) {
+    if (validateData() == False) {
       // Don't allow a swipe until all required data is filled in
-      return false
+      return False
     }
   }
 
@@ -986,7 +986,12 @@ function qr_clear() {
 function clearForm() {
 
   if (!pitScouting) {
-    swipePage(-5);
+  const slides = document.getElementById("main-panel-holder").children;
+
+  slides[slide].style.display = "none";
+  slide = 0; // go back to prematch
+  slides[slide].style.display = "table";
+  window.scrollTo(0,0);
 
     let matchField = document.getElementById("input_m");
     let match = parseInt(matchField.value);
