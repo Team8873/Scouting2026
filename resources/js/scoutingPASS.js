@@ -829,7 +829,7 @@ function configure() {
   idx = 0;
   egc.forEach(element => {
     idx = addElement(egt, idx, element);
-  buildRequiredElementList(element, endgame);
+  buildRequiredElementList(element, "endgame");
   });
 
   // Configure postmatch screen
@@ -838,7 +838,7 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
-  buildRequiredElementList(element, postmatch);
+  buildRequiredElementList(element, "postmatch");
   });
 
   if (!enableGoogleSheets) {
