@@ -1005,7 +1005,7 @@ function clearForm() {
  else {
     swipePage(-1);
   }
-
+}
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
     el.value = "[]";
@@ -1509,4 +1509,4 @@ window.onload = function () {
     }
   }
 };
-}
+
