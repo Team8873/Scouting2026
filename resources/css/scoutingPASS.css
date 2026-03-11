@@ -11,7 +11,7 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0;
-    color: rgba(244, 64, 18);
+    color: rgb(178, 57, 27);
     background-color: hsl(0, 0%, 0%);
 }
 
@@ -24,7 +24,7 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: rgb(108, 207, 152);
+    border-color: rgb(255, 0, 251);
 }
 
 #auton_table, #endgame_table, #teleop_table {
@@ -34,7 +34,7 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: rgb(108, 207, 152);
+    border-color: rgb(255, 0, 251);
 }
 
 .button {
@@ -43,25 +43,25 @@ html, body{
 }
 
 #autonHeader1, #endgameHeader1, #teleopHeader1, #teleopHeader2{
-    color: rgb(255, 145, 19);
-    border-color: rgb(108, 207, 152);
+    color: yellow;
+    border-color: rgb(255, 0, 251);
     border-width: 4px;
 }
 
 #postmatchHeader{
     border-width: 4px;
-    border-color: rgb(108, 207, 152);
+    border-color: rgb(255, 0, 251);
     color:yellow;
 }
 
 #prematchHeader1{
     color: yellow;
-    border-color: rgb(108, 207, 152);
+    border-color: rgb(255, 0, 251);
     border-width: 4px;
 }
 #prematchHeader2{
     color: yellow;
-    border-color: rgb(108, 207, 152);
+    border-color: rgb(255, 0, 251);
     border-width: 4px;
 }
 #qrHeader1, #qrHeader2 {
@@ -98,26 +98,26 @@ html, body{
 #auton{
 background-color:#000030 ;  
 color:yellow;
-border-color:rgb(108, 207, 152);
+border-color:rgb(255, 0, 251);
 }
 
 #teleop{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(108, 207, 152);
+border-color:rgb(255, 0, 251);
 }
 
 #endgame{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(108, 207, 152);
+border-color:rgb(255, 0, 251);
 
 }
 
 #postmatch{
     background-color:#000030 ;  
 color:yellow;
-border-color:rgb(108, 207, 152)
+border-color:rgb(255, 0, 251)
 }
 
 
@@ -178,14 +178,14 @@ h2{
     background-color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
-    color: rgb(255, 59, 18);
+    color: rgb(255, 0, 251);
 }
 
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: rgb(255, 59, 18);
+    color: rgb(0, 255, 30);
 }
 
 .undoButton, .flipButton {
@@ -199,7 +199,7 @@ h2{
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: black;
-    color: rgb(255, 59, 18);
+    color: rgb(0, 255, 30);
     padding: 10px;
 }
 
@@ -207,7 +207,7 @@ h2{
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: rgb(255, 59, 18);
+    color: rgb(255, 0, 251);
 
 }
 
