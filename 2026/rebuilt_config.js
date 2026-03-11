@@ -174,7 +174,7 @@ var config_data = `
         "2": "Outside<br>",
         "0": "Not Attempted<br>"
     }
-    },
+    }
   ],
   "postmatch": [
     {
