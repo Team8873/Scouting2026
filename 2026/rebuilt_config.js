@@ -186,8 +186,7 @@ var config_data = `
         "2": "Average<br>",
         "3": "Very Effective<br>",
         "0": "Not Observed<br>"
-    },
-      "defaultValue": "0"
+    }
     },
     {
       "name": "Defense Rating",
