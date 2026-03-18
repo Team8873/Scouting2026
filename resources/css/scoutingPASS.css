@@ -49,6 +49,9 @@ html, body {
     color: rgb(0, 255, 30);
     display: inline-block;
     text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #333; /* gives a pressable effect */
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
 }
 
 .undoButton, .flipButton {
@@ -64,6 +67,19 @@ html, body {
     color: rgb(255, 0, 251);
     display: inline-block;
     text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #333;
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+/* ===============================
+   BUTTON ACTIVE STATE
+   =============================== */
+input[type="button"]:active, button:active, .button:active,
+.clearForm:active, .submitForm:active, #displayButton:active, #copyButton:active,
+.undoButton:active, .flipButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 0 #333; /* push-in effect */
 }
 
 /* ===============================
@@ -191,3 +207,27 @@ table td.radio-group {
 .half-button-l, .half-button-r { width: 48%; margin: 1vw; height: 100%; font-family: roboto; }
 
 .field { width: 50%; text-align: left; }
+
+.required-missing:focus {
+  outline: 3px solid orange !important;
+}
+/* ===============================
+   BUTTON HOVER GLOW
+   =============================== */
+.button, #nextButton1, #nextButton2, #nextButton3, #nextButton4,
+#nextButton5, #nextButton6, #nextButton7, #nextButton8, #nextButton9, #nextButton10,
+.clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton,
+#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6, 
+#prevButton7, #prevButton8, #prevButton9 {
+    transition: transform 0.05s ease, box-shadow 0.05s ease, text-shadow 0.2s ease;
+}
+
+.button:hover, #nextButton1:hover, #nextButton2:hover, #nextButton3:hover, #nextButton4:hover,
+#nextButton5:hover, #nextButton6:hover, #nextButton7:hover, #nextButton8:hover, #nextButton9:hover, #nextButton10:hover,
+.clearForm:hover, .submitForm:hover, #displayButton:hover, #copyButton:hover, 
+.undoButton:hover, .flipButton:hover,
+#prevButton1:hover, #prevButton2:hover, #prevButton3:hover, #prevButton4:hover, #prevButton5:hover,
+#prevButton6:hover, #prevButton7:hover, #prevButton8:hover, #prevButton9:hover {
+    text-shadow: 0 0 8px currentColor, 0 0 12px currentColor;
+    box-shadow: 0 6px 0 #333, 0 0 10px currentColor; /* small neon glow + press shadow */
+}
