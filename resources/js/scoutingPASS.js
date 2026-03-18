@@ -1131,7 +1131,14 @@ function swipePage(increment, force=false) {
 
       window.scrollTo(0,0);
 
-      slides[slide].style.display = "block";
+      // reset classes
+    slides[slide].classList.remove("page-enter", "page-active");
+    // start animation
+    slides[slide].classList.add("page-enter");
+    slides[slide].style.display = "block";
+  setTimeout(() => {
+    slides[slide].classList.add("page-active");}, 10);
+    slides[slide].style.display = "block";
 
       document.getElementById("data").innerHTML = "";
       document.getElementById("copyButton").setAttribute("value","Copy Data");
