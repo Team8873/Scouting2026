@@ -40,46 +40,37 @@ html, body {
 /* ===============================
    BUTTONS
    =============================== */
-.button, #nextButton1, #nextButton2, #nextButton3, #nextButton4,
-#nextButton5, #nextButton6, #nextButton7, #nextButton8, #nextButton9, #nextButton10,
-.clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton{
+.button, .clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton,
+#prevButton1,#prevButton2,#prevButton3,#prevButton4,#prevButton5,#prevButton6,#prevButton7,#prevButton8,#prevButton9,
+#nextButton1,#nextButton2,#nextButton3,#nextButton4,#nextButton5,#nextButton6,#nextButton7,#nextButton8,#nextButton9,#nextButton10 {
     font-family: Alexis;
     padding: 10px;
     background-color: black;
     color: rgb(0, 255, 30);
     display: inline-block;
     text-decoration: none;
+    border: none;
     cursor: pointer;
-    box-shadow: 0 4px 0 #333; /* gives a pressable effect */
-    transition: transform 0.05s ease, box-shadow 0.05s ease;
+    transition: transform 0.05s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
 }
 
-.undoButton, .flipButton {
-    color: white;
-    margin-left: 20px;
-}
-
-#prevButton3, #prevButton4, #prevButton5, #prevButton6, #prevButton7, #prevButton8, #prevButton9,
-#prevButton1, #prevButton2 {
-    font-family: Alexis;
-    padding: 10px;
-    background-color: black;
-    color: rgb(255, 0, 251);
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 4px 0 #333;
-    transition: transform 0.05s ease, box-shadow 0.05s ease;
-}
-
-/* ===============================
-   BUTTON ACTIVE STATE
-   =============================== */
-input[type="button"]:active, button:active, .button:active,
-.clearForm:active, .submitForm:active, #displayButton:active, #copyButton:active,
-.undoButton:active, .flipButton:active {
+/* Active press scale */
+.button:active, .clearForm:active, .submitForm:active, #displayButton:active, #copyButton:active,
+.undoButton:active, .flipButton:active, #prevButton1:active,#prevButton2:active,#prevButton3:active,#prevButton4:active,
+#prevButton5:active,#prevButton6:active,#prevButton7:active,#prevButton8:active,#prevButton9:active,
+#nextButton1:active,#nextButton2:active,#nextButton3:active,#nextButton4:active,#nextButton5:active,
+#nextButton6:active,#nextButton7:active,#nextButton8:active,#nextButton9:active,#nextButton10:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 0 #333; /* push-in effect */
+}
+
+/* Hover glow */
+.button:hover, .clearForm:hover, .submitForm:hover, #displayButton:hover, #copyButton:hover,
+.undoButton:hover, .flipButton:hover, #prevButton1:hover,#prevButton2:hover,#prevButton3:hover,#prevButton4:hover,
+#prevButton5:hover,#prevButton6:hover,#prevButton7:hover,#prevButton8:hover,#prevButton9:hover,
+#nextButton1:hover,#nextButton2:hover,#nextButton3:hover,#nextButton4:hover,#nextButton5:hover,
+#nextButton6:hover,#nextButton7:hover,#nextButton8:hover,#nextButton9:hover,#nextButton10:hover {
+    text-shadow: 0 0 8px currentColor, 0 0 12px currentColor;
+    box-shadow: 0 6px 0 #333, 0 0 10px currentColor;
 }
 
 /* ===============================
@@ -106,18 +97,6 @@ h2 {
 }
 
 /* ===============================
-   FIELD IMAGES
-   =============================== */
-.field-image {
-    margin: 2vw;
-}
-
-.field-image-src {
-    background-position: center;
-    border: 1px solid;
-}
-
-/* ===============================
    MAIN PANELS
    =============================== */
 .main-panel {
@@ -137,97 +116,33 @@ h2 {
    INDIVIDUAL PANELS
    =============================== */
 #prematch { display: table; }
-
-#auton, #teleop, #endgame, #postmatch{
-    background-color: #000030;  
-    color: yellow;
-    border-color: rgb(255, 0, 251);
-}
+#auton, #teleop, #endgame, #postmatch { background-color: #000030; color: yellow; border-color: rgb(255, 0, 251); }
 
 /* ===============================
    QR CODE
    =============================== */
-#qr-code, #qr-table, #data {
-    text-align: center;
-    color: black;
-    background-color: white;
-}
+#qr-code, #qr-table, #data { text-align: center; color: black; background-color: white; }
 
 /* ===============================
    TABLE CELLS AND INPUTS
    =============================== */
-table {
-    border: 1px solid black;
-    width: 100%;
-}
-
-td {
-    padding: 10px 4px;
-    text-align: center; /* center content inside cells */
-}
-
-input {
-    font-size: 16px;
-    font-family: roboto;
-    color: black;
-    background-color: white;
-}
+table { border: 1px solid black; width: 100%; }
+td { padding: 10px 4px; text-align: center; }
+input { font-size: 16px; font-family: roboto; color: black; background-color: white; }
 
 /* ===============================
    RADIO BUTTON CENTERING
    =============================== */
-/* Make radio buttons and labels horizontally centered */
-table td input[type="radio"] {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-table td label {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-/* Flexbox version if labels wrap radio inputs */
-table td.radio-group {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    gap: 15px;               /* spacing between radios */
-    flex-wrap: wrap;         /* wrap if too many buttons */
-}
+table td input[type="radio"] { display: inline-block; margin: 0 auto; }
+table td label { display: inline-block; margin: 0 5px; }
+table td.radio-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
 
 /* ===============================
    MISC
    =============================== */
 .title { width: 50%; text-align: right; }
 .field { width: 50%; text-align: left; }
-
 .match-label { text-align: center; }
-
 .half-button-container { display: flex; }
 .half-button-l, .half-button-r { width: 48%; margin: 1vw; height: 100%; font-family: roboto; }
-
-.field { width: 50%; text-align: left; }
-
-.required-missing:focus {
-  outline: 3px solid orange !important;
-}
-/* ===============================
-   BUTTON HOVER GLOW
-   =============================== */
-.button, #nextButton1, #nextButton2, #nextButton3, #nextButton4,
-#nextButton5, #nextButton6, #nextButton7, #nextButton8, #nextButton9, #nextButton10,
-.clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton,
-#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6, 
-#prevButton7, #prevButton8, #prevButton9 {
-    transition: transform 0.05s ease, box-shadow 0.05s ease, text-shadow 0.2s ease;
-}
-
-.button:hover, #nextButton1:hover, #nextButton2:hover, #nextButton3:hover, #nextButton4:hover,
-#nextButton5:hover, #nextButton6:hover, #nextButton7:hover, #nextButton8:hover, #nextButton9:hover, #nextButton10:hover,
-.clearForm:hover, .submitForm:hover, #displayButton:hover, #copyButton:hover, 
-.undoButton:hover, .flipButton:hover,
-#prevButton1:hover, #prevButton2:hover, #prevButton3:hover, #prevButton4:hover, #prevButton5:hover,
-#prevButton6:hover, #prevButton7:hover, #prevButton8:hover, #prevButton9:hover {
-    text-shadow: 0 0 8px currentColor, 0 0 12px currentColor;
-    box-shadow: 0 6px 0 #333, 0 0 10px currentColor; /* small neon glow + press shadow */
-}
+.required-missing:focus { outline: 3px solid orange !important; }
