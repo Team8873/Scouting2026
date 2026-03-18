@@ -1100,7 +1100,7 @@ function moveTouch(e) {
 
 function swipePage(increment, force=false) {
 
-  if (force || qr_regenerate() === true) {
+  if (increment < 0 || force || qr_regenerate() === true) {
 
     const slides = document.getElementById("main-panel-holder").children;
 
