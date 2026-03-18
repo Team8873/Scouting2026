@@ -1001,8 +1001,11 @@ function qr_clear() {
   qr.clear()
 }
 
-
 function clearForm() {
+
+  if (!confirm("Are you sure you want to clear the form? This cannot be undone.")) {
+    return; // user pressed Cancel
+  }
 
   if (!pitScouting) {
 
@@ -1016,11 +1019,10 @@ function clearForm() {
     }
 
     resetRobot();
-  }
-
- else {
+  } else {
     swipePage(-1);
   }
+  
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
     el.value = "[]";
