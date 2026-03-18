@@ -22,22 +22,6 @@
                     console.log('Service Worker registration failed:', error);
                 });
         }
-
-        // Swipe page function with animation
-        function swipePage(direction) {
-            const panels = document.querySelectorAll('.main-panel');
-            let currentIndex = Array.from(panels).findIndex(panel => panel.classList.contains('active'));
-
-            if(currentIndex >= 0) {
-                panels[currentIndex].classList.remove('active');
-            }
-
-            let nextIndex = currentIndex + direction;
-            if(nextIndex < 0) nextIndex = 0;
-            if(nextIndex >= panels.length) nextIndex = panels.length - 1;
-
-            panels[nextIndex].classList.add('active');
-        }
     </script>
 </head>
 
@@ -46,7 +30,7 @@
         <div id="main-panel-holder">
 
             <!-- ================= PREMATCH ================= -->
-            <div id="prematch" class="main-panel active" style="background-color: rgb(2, 29, 92);">
+            <div id="prematch" class="main-panel" style="background-color: rgb(2, 29, 92);">
                 <h1 id="prematchHeader1" class="page_title">
                     <span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020
                 </h1>
