@@ -1022,7 +1022,7 @@ function clearForm() {
   } else {
     swipePage(-1);
   }
-  
+
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
     el.value = "[]";
@@ -1116,6 +1116,24 @@ function moveTouch(e) {
   }
   initialX = null;
 };
+
+function swipePage(direction) {
+    const panels = document.querySelectorAll('.main-panel');
+    let currentIndex = Array.from(panels).findIndex(panel => panel.classList.contains('active'));
+
+    // Remove current panel active class
+    if(currentIndex >= 0) {
+        panels[currentIndex].classList.remove('active');
+    }
+
+    // Calculate next panel index
+    let nextIndex = currentIndex + direction;
+    if(nextIndex < 0) nextIndex = 0;
+    if(nextIndex >= panels.length) nextIndex = panels.length - 1;
+
+    // Add active class to next panel
+    panels[nextIndex].classList.add('active');
+}
 
 function swipePage(increment, force=false) {
 

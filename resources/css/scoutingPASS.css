@@ -157,3 +157,19 @@ table td.radio-group { display: flex; justify-content: center; gap: 15px; flex-w
 .half-button-container { display: flex; }
 .half-button-l, .half-button-r { width: 48%; margin: 1vw; height: 100%; font-family: roboto; }
 .required-missing:focus { outline: 3px solid orange !important; }
+
+/* ===============================
+   Fade animation
+   =============================== */
+.main-panel {
+    opacity: 0;
+    transform: translateX(50px); /* start slightly to the right */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* still hidden by default */
+}
+
+.main-panel.active {
+    display: block;   /* show panel */
+    opacity: 1;       /* fade in */
+    transform: translateX(0); /* slide to normal position */
+}
