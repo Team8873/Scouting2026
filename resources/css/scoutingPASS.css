@@ -41,12 +41,23 @@ html, body {
    BUTTONS
    =============================== */
 .button, .clearForm, .submitForm, #displayButton, #copyButton, .undoButton, .flipButton,
-#prevButton1,#prevButton2,#prevButton3,#prevButton4,#prevButton5,#prevButton6,#prevButton7,#prevButton8,#prevButton9,
 #nextButton1,#nextButton2,#nextButton3,#nextButton4,#nextButton5,#nextButton6,#nextButton7,#nextButton8,#nextButton9,#nextButton10 {
     font-family: Alexis;
     padding: 10px;
     background-color: black;
     color: rgb(0, 255, 30);
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.05s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
+}
+
+.button,#prevButton1,#prevButton2,#prevButton3,#prevButton4,#prevButton5,#prevButton6,#prevButton7,#prevButton8,#prevButton9{
+    font-family: Alexis;
+    padding: 10px;
+    background-color: black;
+    color: rgb(255, 0, 251);
     display: inline-block;
     text-decoration: none;
     border: none;
