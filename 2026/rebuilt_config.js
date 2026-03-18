@@ -248,7 +248,7 @@ var config_data = `
     { "name": "Comments",
       "code": "def",
       "type": "text",
-      "size": 25,
+      "size": 10,
       "maxSize": 100 
     }
   ]
