@@ -162,7 +162,8 @@ var config_data = `
         "1": "Level 1<br>",
         "2": "Level 2<br>",
         "3": "Level 3<br>"
-      }
+      },
+      "required": "true"
     },
     {
       "name": "Climb Position",
@@ -172,7 +173,8 @@ var config_data = `
         "0": "Not Attempted<br>",
         "1": "Inside<br>",
         "2": "Outside<br>"
-      }
+      },
+      "required": "true"
     }
   ],
   "postmatch": [
@@ -197,7 +199,8 @@ var config_data = `
         "2": "Average<br>",
         "3": "Good<br>",
         "4": "Excellent<br>"
-      }
+      },
+      "defaultValue": "0"
     },
     {
       "name": "Speed Rating",
@@ -212,18 +215,42 @@ var config_data = `
       },
       "defaultValue": "3"
     },
-    { "name": "Crossed Trench", "code": "sr", "type": "bool" },
-    { "name": "Crossed Bump", "code": "bmp", "type": "bool" },
-    { "name": "Died/Immobilized", "code": "tre", "type": "bool" },
-    { "name": "Tippy<br>(almost tipped over)", "code": "die", "type": "bool" },
+    { 
+      "name": "Crossed Trench",
+      "code": "sr",
+      "type": "bool"
+      },
+    { 
+      "name": "Crossed Bump",
+      "code": "bmp",
+      "type": "bool" 
+      },
+    { 
+      "name": "Died/Immobilized",
+      "code": "tre",
+       "type": "bool"
+      },
+    { 
+      "name": "Tippy<br>(almost tipped over)",
+      "code": "die",
+       "type": "bool" 
+      },
     {
       "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Was Defended", "code": "all", "type": "bool" },
-    { "name": "Comments", "code": "def", "type": "text", "size": 10, "maxSize": 100 }
+    { "name": "Was Defended",
+      "code": "all",
+       "type": "bool" 
+      },
+    { "name": "Comments",
+      "code": "def",
+      "type": "text",
+      "size": 25,
+      "maxSize": 100 
+    }
   ]
 }
 `;
