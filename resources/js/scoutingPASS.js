@@ -863,30 +863,47 @@ return document.forms.scoutingForm.l.value
 }
 
 function validateData() {
-
   const pageNames = ["prematch","auton","teleop","endgame","postmatch"];
   const currentPage = pageNames[slide];
 
-  var ret = true;
-  var errStr = "";
+  let valid = true;
+  let firstInvalidEl = null;
 
-  for (rf of requiredFields[currentPage]) {
-    var thisRF = document.forms.scoutingForm[rf];
-	if (thisRF.value == "[]" || thisRF.value.length == 0) {
-	  if (rf == "as") {
-		rftitle = "Auto Start Position"
-	  } else {
-		thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-		rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-	  }
-	  errStr += rf + ": " + rftitle + "\n";
-	  ret = false;
-	}
+  for (let rf of requiredFields[currentPage]) {
+    let field = document.forms.scoutingForm[rf];
+
+    if (!field) continue;
+
+    let value = field.value;
+
+    if (value === "[]" || value.length === 0) {
+
+      valid = false;
+
+      // Handle radio groups
+      let inputEl = (field instanceof RadioNodeList) ? field[0] : field;
+
+      // Highlight
+      inputEl.classList.add("required-missing");
+
+      // Save first invalid element for scrolling
+      if (!firstInvalidEl) {
+        firstInvalidEl = inputEl;
+      }
+
+    } else {
+      // Remove highlight if fixed
+      let inputEl = (field instanceof RadioNodeList) ? field[0] : field;
+      inputEl.classList.remove("required-missing");
+    }
   }
-  if (ret == false) {
-    alert("Enter all required values\n" + errStr);
+
+  // Scroll to first invalid field
+  if (!valid && firstInvalidEl) {
+    firstInvalidEl.scrollIntoView({ behavior: "smooth", block: "center" });
   }
-  return ret
+
+  return valid;
 }
 
 function getData(dataFormat) {
@@ -1506,4 +1523,19 @@ window.onload = function () {
       setUpGoogleSheets();
     }
   }
+  // Clear highlight when user types
+  document.addEventListener("input", (e) => {
+    if (e.target.classList.contains("required-missing")) {
+      e.target.classList.remove("required-missing");
+    }
+  });
+
+  // Clear highlight for radio buttons
+  document.addEventListener("change", (e) => {
+    if (e.target.type === "radio") {
+      let name = e.target.name;
+      let group = document.getElementsByName(name);
+      group.forEach(el => el.classList.remove("required-missing"));
+    }
+  });  
 };
