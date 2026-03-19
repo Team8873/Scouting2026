@@ -1011,16 +1011,56 @@ function clearForm() {
 
   const form = document.forms.scoutingForm;
 
-  // Store match before reset (for increment later)
-  let matchField = document.getElementById("input_m");
-  let match = matchField ? parseInt(matchField.value) : null;
+  // Preserve key values BEFORE reset
+  const initials = document.getElementById("input_s")?.value;
+  const event = document.getElementById("input_e")?.value;
 
-  // 🔥 1. Reset entire form (this does a LOT for free)
+  const matchField = document.getElementById("input_m");
+  const match = matchField ? parseInt(matchField.value) : null;
+
+  // Preserve level (radio group "l")
+  let levelValue = null;
+  const levelChecked = document.querySelector("input[name='l']:checked");
+  if (levelChecked) levelValue = levelChecked.value;
+
+  // Preserve robot (radio group "r")
+  let robotValue = null;
+  const robotChecked = document.querySelector("input[name='r']:checked");
+  if (robotChecked) robotValue = robotChecked.value;
+
+  // Reset entire form
   form.reset();
 
-  // 🔥 2. Restore custom defaults (your hidden default_ fields)
+  // Restore preserved values
+  if (initials !== undefined) document.getElementById("input_s").value = initials;
+  if (event !== undefined) document.getElementById("input_e").value = event;
+
+  // Increment match
+  if (matchField && !isNaN(match)) {
+    matchField.value = match + 1;
+  }
+
+  // Restore level
+  if (levelValue !== null) {
+    const levelRadio = document.querySelector(`input[name='l'][value='${levelValue}']`);
+    if (levelRadio) levelRadio.checked = true;
+  }
+
+  // Restore robot
+  if (robotValue !== null) {
+    const robotRadio = document.querySelector(`input[name='r'][value='${robotValue}']`);
+    if (robotRadio) robotRadio.checked = true;
+  }
+
+  // Restore defaults / clear others
   document.querySelectorAll("[id^='input_']").forEach(el => {
     let code = el.id.replace("input_", "");
+
+    // Skip preserved fields
+    if (["s", "e", "m"].includes(code)) return;
+    if (code.startsWith("l_")) return;
+    if (code.startsWith("r_")) return;
+
     let def = document.getElementById("default_" + code);
 
     if (def) {
@@ -1029,19 +1069,25 @@ function clearForm() {
       } else {
         el.value = def.value;
       }
+    } else {
+      if (el.type === "checkbox") el.checked = false;
+      else if (el.type !== "radio") el.value = "";
     }
   });
 
-  // 🔥 3. Force clear radios (form.reset doesn’t always behave as expected with dynamic radios)
-  document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
+  //Clear radios EXCEPT level + robot
+  document.querySelectorAll("input[type='radio']").forEach(r => {
+    if (r.name !== "l" && r.name !== "r") {
+      r.checked = false;
+    }
+  });
 
-  // 🔥 4. Reset counters, timers, cycles
+  //Reset counters, timers, cycles
   document.querySelectorAll(".counter, .timer, .cycle").forEach(el => {
     el.value = 0;
 
     let code = el.id.replace("input_", "");
 
-    // Stop timers if needed
     let status = document.getElementById("status_" + code);
     let startBtn = document.getElementById("start_" + code);
     let intervalField = document.getElementById("intervalId_" + code);
@@ -1054,7 +1100,6 @@ function clearForm() {
     if (status) status.value = "stopped";
     if (startBtn) startBtn.value = "Start";
 
-    // Reset cycle data
     let cycleTime = document.getElementById("cycletime_" + code);
     let display = document.getElementById("display_" + code);
 
@@ -1062,24 +1107,17 @@ function clearForm() {
     if (display) display.value = "";
   });
 
-  // 🔥 5. Clear clickable images
+  //Clear clickable images
   document.querySelectorAll("[id^='XY_']").forEach(el => el.value = "[]");
   document.querySelectorAll(".clickableImage").forEach(el => el.value = "[]");
 
-  // 🔥 6. Handle match increment + navigation
+  //Reset navigation
   if (!pitScouting) {
     swipePage(-slide, true);
-
-    if (matchField && !isNaN(match)) {
-      matchField.value = match + 1;
-    }
-
-    resetRobot();
   } else {
     swipePage(-1);
   }
 
-  // 🔥 7. Redraw canvas fields
   drawFields();
 }
 
