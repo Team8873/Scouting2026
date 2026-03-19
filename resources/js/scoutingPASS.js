@@ -706,6 +706,8 @@ function addElement(table, idx, data) {
     (data.type == 'text')
   ) {
     idx = addText(table, idx, name, data);
+  } else if (data.type == 'slider') {
+  idx = addSlider(table, idx, name, data);
   } else if ((data.type == 'level') ||
     (data.type == 'radio') ||
     (data.type == 'robot')
@@ -739,6 +741,65 @@ function buildRequiredElementList(element, page) {
   if (element.required == "true") {
     requiredFields[page].push(element.code);
   }
+}
+
+function addSlider(table, idx, name, data) {
+  const row = table.insertRow(idx);
+
+  if (!data.hasOwnProperty('code')) {
+    const cell = row.insertCell(0);
+    cell.classList.add("title");
+    cell.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+
+  const labelCell = row.insertCell(0);
+  const controlCell = row.insertCell(1);
+
+  labelCell.classList.add("title");
+  controlCell.classList.add("field");
+
+  labelCell.style.width = ColWidth;
+  controlCell.style.width = ColWidth;
+
+  labelCell.innerHTML = name + "&nbsp;";
+
+  if (data.hasOwnProperty('tooltip')) {
+    labelCell.setAttribute("title", data.tooltip);
+  }
+
+  // Create slider
+  const slider = document.createElement("input");
+  slider.type = "range";
+  slider.min = data.min || 0;
+  slider.max = data.max || 100;
+  slider.value = data.defaultValue || 0;
+  slider.id = "slider_" + data.code;
+
+  // Hidden input (this is what gets saved/exported)
+  const hidden = document.createElement("input");
+  hidden.type = "hidden";
+  hidden.id = "input_" + data.code;
+  hidden.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
+  hidden.value = slider.value;
+
+  // Display value
+  const display = document.createElement("span");
+  display.id = "display_" + data.code;
+  display.innerHTML = slider.value + "%";
+  display.style.marginLeft = "10px";
+
+  // Update value live
+  slider.oninput = () => {
+    hidden.value = slider.value;
+    display.innerHTML = slider.value + "%";
+  };
+
+  controlCell.appendChild(slider);
+  controlCell.appendChild(display);
+  controlCell.appendChild(hidden);
+
+  return idx + 1;
 }
 
 function configure() {

@@ -76,18 +76,13 @@ var config_data = `
       "required": "true"
     },
     {
-      "name": "Fuel Accuracy",
+      "name": "Shot Accuracy",
+      "type": "slider",
       "code": "ac",
-      "type": "radio",
-      "choices": {
-        "0": "0%",
-        "0.2": "20%",
-        "0.4": "40%",
-        "0.6": "60%",
-        "0.8": "80%",
-        "1.0": "100%"
-      },
-      "required": "true"
+      "min": 0,
+      "max": 100,
+      "defaultValue": 50,
+      "tooltip": "Estimate shooting accuracy"
     },
     {
       "name": "Fuel Passed",
