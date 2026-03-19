@@ -1007,8 +1007,6 @@ function clearForm() {
     return; // user pressed Cancel
   }
 
-  showSuccessAnimation();
-
   if (!pitScouting) {
 
     swipePage(-slide, true);
@@ -1024,6 +1022,8 @@ function clearForm() {
   } else {
     swipePage(-1);
   }
+
+  showSuccessAnimation();
 
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
