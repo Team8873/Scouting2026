@@ -1007,6 +1007,8 @@ function clearForm() {
     return; // user pressed Cancel
   }
 
+  showSuccessAnimation();
+
   if (!pitScouting) {
 
     swipePage(-slide, true);
@@ -1017,13 +1019,19 @@ function clearForm() {
     if (!isNaN(match)) {
       matchField.value = match + 1;
     }
+    // Force clear all radios
+    document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
 
+    // Reset defaults properly
+    document.querySelectorAll("[id^='input_']").forEach(el => {
+    let code = el.id.substring(6);
+    let def = document.getElementById("default_" + code);
+    if (def) el.value = def.value;
+});
     resetRobot();
   } else {
     swipePage(-1);
   }
-
-  showSuccessAnimation();
 
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
