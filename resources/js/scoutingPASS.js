@@ -1015,10 +1015,10 @@ function clearForm() {
   let matchField = document.getElementById("input_m");
   let match = matchField ? parseInt(matchField.value) : null;
 
-  //1. Reset entire form (this does a LOT for free)
+  // 🔥 1. Reset entire form (this does a LOT for free)
   form.reset();
 
-  //2. Restore custom defaults (your hidden default_ fields)
+  // 🔥 2. Restore custom defaults (your hidden default_ fields)
   document.querySelectorAll("[id^='input_']").forEach(el => {
     let code = el.id.replace("input_", "");
     let def = document.getElementById("default_" + code);
@@ -1032,10 +1032,10 @@ function clearForm() {
     }
   });
 
-  //3. Force clear radios (form.reset doesn’t always behave as expected with dynamic radios)
+  // 🔥 3. Force clear radios (form.reset doesn’t always behave as expected with dynamic radios)
   document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
 
-  //4. Reset counters, timers, cycles
+  // 🔥 4. Reset counters, timers, cycles
   document.querySelectorAll(".counter, .timer, .cycle").forEach(el => {
     el.value = 0;
 
@@ -1062,11 +1062,11 @@ function clearForm() {
     if (display) display.value = "";
   });
 
-  //5. Clear clickable images
+  // 🔥 5. Clear clickable images
   document.querySelectorAll("[id^='XY_']").forEach(el => el.value = "[]");
   document.querySelectorAll(".clickableImage").forEach(el => el.value = "[]");
 
-  //Handle match increment + navigation
+  // 🔥 6. Handle match increment + navigation
   if (!pitScouting) {
     swipePage(-slide, true);
 
@@ -1079,81 +1079,10 @@ function clearForm() {
     swipePage(-1);
   }
 
-  //Redraw canvas fields
+  // 🔥 7. Redraw canvas fields
   drawFields();
 }
 
-  // Clear XY values
-  document.querySelectorAll("[id^='XY_']").forEach(el => {
-    el.value = "[]";
-  });
-
-  // Clear all inputs
-  document.querySelectorAll("[id^='input_']").forEach(el => {
-
-    let code = el.id.substring(6);
-
-    // Skip key fields
-    if (["m", "e", "s"].includes(code)) return;
-    if (code.startsWith("r_")) return;
-    if (code.startsWith("l_")) return;
-
-    if (el.classList.contains("clickableImage")) {
-      el.value = "[]";
-      return;
-    }
-
-    if (el.type === "checkbox") {
-      el.checked = false;
-      return;
-    }
-
-    if (el.classList.contains("counter") ||
-        el.classList.contains("timer") ||
-        el.classList.contains("cycle")) {
-
-      el.value = 0;
-
-      if (el.classList.contains("timer") ||
-          el.classList.contains("cycle")) {
-
-        let status = document.getElementById("status_" + code);
-        let startButton = document.getElementById("start_" + code);
-        let intervalField = document.getElementById("intervalId_" + code);
-
-        if (intervalField && intervalField.value !== "") {
-          clearInterval(intervalField.value);
-        }
-
-        if (status) status.value = "stopped";
-        if (startButton) startButton.value = "Start";
-        if (intervalField) intervalField.value = "";
-
-        if (el.classList.contains("cycle")) {
-          let cycleTime = document.getElementById("cycletime_" + code);
-          let display = document.getElementById("display_" + code);
-
-          if (cycleTime) cycleTime.value = "[]";
-          if (display) display.value = "";
-        }
-      }
-
-      return;
-    }
-
-    if (el.type === "radio") {
-      el.checked = false;
-      return;
-    }
-
-    if (el.type === "text" || el.type === "number" || el.type === "hidden") {
-      el.value = "";
-    }
-
-  });
-
-  drawFields();
-}
 function startTouch(e) {
   initialX = e.touches[0].screenX;
 };
