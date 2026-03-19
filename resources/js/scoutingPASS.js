@@ -1004,34 +1004,84 @@ function qr_clear() {
 function clearForm() {
 
   if (!confirm("Are you sure you want to clear the form? This cannot be undone.")) {
-    return; // user pressed Cancel
+    return;
   }
 
   showSuccessAnimation();
 
-  if (!pitScouting) {
+  const form = document.forms.scoutingForm;
 
+  // Store match before reset (for increment later)
+  let matchField = document.getElementById("input_m");
+  let match = matchField ? parseInt(matchField.value) : null;
+
+  //1. Reset entire form (this does a LOT for free)
+  form.reset();
+
+  //2. Restore custom defaults (your hidden default_ fields)
+  document.querySelectorAll("[id^='input_']").forEach(el => {
+    let code = el.id.replace("input_", "");
+    let def = document.getElementById("default_" + code);
+
+    if (def) {
+      if (el.type === "checkbox") {
+        el.checked = (def.value === "true" || def.value === "1");
+      } else {
+        el.value = def.value;
+      }
+    }
+  });
+
+  //3. Force clear radios (form.reset doesn’t always behave as expected with dynamic radios)
+  document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
+
+  //4. Reset counters, timers, cycles
+  document.querySelectorAll(".counter, .timer, .cycle").forEach(el => {
+    el.value = 0;
+
+    let code = el.id.replace("input_", "");
+
+    // Stop timers if needed
+    let status = document.getElementById("status_" + code);
+    let startBtn = document.getElementById("start_" + code);
+    let intervalField = document.getElementById("intervalId_" + code);
+
+    if (intervalField && intervalField.value) {
+      clearInterval(intervalField.value);
+      intervalField.value = "";
+    }
+
+    if (status) status.value = "stopped";
+    if (startBtn) startBtn.value = "Start";
+
+    // Reset cycle data
+    let cycleTime = document.getElementById("cycletime_" + code);
+    let display = document.getElementById("display_" + code);
+
+    if (cycleTime) cycleTime.value = "[]";
+    if (display) display.value = "";
+  });
+
+  //5. Clear clickable images
+  document.querySelectorAll("[id^='XY_']").forEach(el => el.value = "[]");
+  document.querySelectorAll(".clickableImage").forEach(el => el.value = "[]");
+
+  //Handle match increment + navigation
+  if (!pitScouting) {
     swipePage(-slide, true);
 
-    let matchField = document.getElementById("input_m");
-    let match = parseInt(matchField.value);
-
-    if (!isNaN(match)) {
+    if (matchField && !isNaN(match)) {
       matchField.value = match + 1;
     }
-    // Force clear all radios
-    document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
 
-    // Reset defaults properly
-    document.querySelectorAll("[id^='input_']").forEach(el => {
-    let code = el.id.substring(6);
-    let def = document.getElementById("default_" + code);
-    if (def) el.value = def.value;
-});
     resetRobot();
   } else {
     swipePage(-1);
   }
+
+  //Redraw canvas fields
+  drawFields();
+}
 
   // Clear XY values
   document.querySelectorAll("[id^='XY_']").forEach(el => {
