@@ -1139,7 +1139,11 @@ function swipePage(increment, force=false) {
   setTimeout(() => {
     slides[slide].classList.add("page-active");}, 10);
     slides[slide].style.display = "block";
+    // 👇UPDATE PROGRESS BAR
+    const total = slides.length;
+    const percent = ((slide + 1) / total) * 100;
 
+      document.getElementById("progress-bar").style.width = percent + "%";
       document.getElementById("data").innerHTML = "";
       document.getElementById("copyButton").setAttribute("value","Copy Data");
 
