@@ -124,6 +124,15 @@ var config_data = `
       "type": "counter"
     },
     {
+      "name": "Shot Accuracy",
+      "type": "slider",
+      "code": "tfo",
+      "min": 0,
+      "max": 100,
+      "defaultValue": 50,
+      "tooltip": "Estimate shooting accuracy"
+    },
+    {
       "name": "Fired Accuracy",
       "code": "tfo",
       "type": "radio",
