@@ -76,7 +76,7 @@ var config_data = `
       "required": "true"
     },
     {
-      "name": "Fuel Acc",
+      "name": "Fuel Accuracy",
       "code": "ac",
       "type": "radio",
       "choices": {
