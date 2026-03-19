@@ -48,19 +48,9 @@ html, body {
   transition: width 0.3s ease;
 }
 
-#progress-bar.complete {
-  background: gold;
-}
-
-#progress-bar.not-complete {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 0%;
-  background: linear-gradient(90deg, #00ffcc, #00ff66);
-  z-index: 9999;
-  transition: width 0.3s ease;
+input[type="button"]:active {
+  transform: scale(0.9);
+  transition: transform 0.1s;
 }
 
 /* ===============================
