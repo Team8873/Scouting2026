@@ -133,20 +133,6 @@ var config_data = `
       "tooltip": "Estimate shooting accuracy"
     },
     {
-      "name": "Fired Accuracy",
-      "code": "tfo",
-      "type": "radio",
-      "choices": {
-        "0": "0%",
-        "0.2": "20%",
-        "0.4": "40%",
-        "0.6": "60%",
-        "0.8": "80%",
-        "1.0": "100%"
-      },
-      "required": "true"
-    },
-    {
       "name": "Fuel Passed",
       "code": "tff",
       "expectedMax": 32,
