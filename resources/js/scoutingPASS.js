@@ -1145,6 +1145,9 @@ function swipePage(increment, force=false) {
 
     if (percent === 100) {
       document.getElementById("progress-bar").classList.add("complete");}
+    else{
+      document.getElementById("progress-bar").classList.add("not-complete");}
+      
       document.getElementById("progress-bar").style.width = percent + "%";
       document.getElementById("data").innerHTML = "";
       document.getElementById("copyButton").setAttribute("value","Copy Data");
