@@ -1141,7 +1141,7 @@ function swipePage(increment, force=false) {
     slides[slide].style.display = "block";
     // 👇UPDATE PROGRESS BAR
     const total = slides.length;
-    const percent = ((slide) / total) * 100;
+    const percent = ((slide + 1) / total) * 100;
 
       document.getElementById("progress-bar").style.width = percent + "%";
       document.getElementById("data").innerHTML = "";
