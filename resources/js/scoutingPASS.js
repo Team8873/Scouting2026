@@ -1143,6 +1143,8 @@ function swipePage(increment, force=false) {
     const total = slides.length;
     const percent = ((slide + 1) / total) * 100;
 
+    if (percent === 100) {
+      document.getElementById("progress-bar").classList.add("complete");}
       document.getElementById("progress-bar").style.width = percent + "%";
       document.getElementById("data").innerHTML = "";
       document.getElementById("copyButton").setAttribute("value","Copy Data");

@@ -48,6 +48,10 @@ html, body {
   transition: width 0.3s ease;
 }
 
+#progress-bar.complete {
+  background: gold;
+}
+
 /* ===============================
    BUTTONS
    =============================== */
