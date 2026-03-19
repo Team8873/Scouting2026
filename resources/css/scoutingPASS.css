@@ -63,6 +63,16 @@ input[type="counter"]:active {
   transition: transform 0.1s;
 }
 
+.success-flash {
+  animation: successFlash 0.4s ease;
+}
+
+@keyframes successFlash {
+  0%   { background-color: #00ff88; transform: scale(1); }
+  50%  { background-color: #00ff88; transform: scale(1.02); }
+  100% { background-color: transparent; transform: scale(1); }
+}
+
 /* ===============================
    BUTTONS
    =============================== */

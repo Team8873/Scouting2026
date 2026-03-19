@@ -1,7 +1,7 @@
 // ScoutingPASS.js
 //
 // The guts of the ScountingPASS application
-// Written by Team 2451 - PWNAGE Added on to by Team 8873
+// Written by Team 2451 - PWNAGE Overhauled by Team 8873 - Rockefeller
 
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchend", moveTouch, false);
@@ -1007,6 +1007,8 @@ function clearForm() {
     return; // user pressed Cancel
   }
 
+  showSuccessAnimation();
+
   if (!pitScouting) {
 
     swipePage(-slide, true);
@@ -1523,6 +1525,21 @@ function copyData(){
   document.getElementById('copyButton').setAttribute('value','Copied');
 }
 
+function showSuccessAnimation() {
+  const body = document.body;
+
+  body.classList.add("success-flash");
+
+  // optional vibration (phones)
+  if (navigator.vibrate) {
+    navigator.vibrate(50);
+  }
+
+  setTimeout(() => {
+    body.classList.remove("success-flash");
+  }, 400);
+}
+
 window.onload = function () {
   let ret = configure();
   if (ret != -1) {
@@ -1547,7 +1564,7 @@ window.onload = function () {
       e.target.classList.remove("required-missing");
     }
   });
-
+  
   // Clear highlight for radio buttons
   document.addEventListener("change", (e) => {
     if (e.target.type === "radio") {
