@@ -2,7 +2,7 @@
 
 # Scouting P.A.S.S.
 
-#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org) Overhauled by [Rockefeller Robotica - Team #8873]
+#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org) Overhauled by [Rockefeller Robotics - Team #8873]
 
 <a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="https://PWNAGERobotics.github.io/ScoutingPASS/pit.html">Pit Scouting</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
 
