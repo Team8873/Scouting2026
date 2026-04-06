@@ -81,7 +81,7 @@ var config_data = `
       "code": "ac",
       "min": 0,
       "max": 1,
-      "defaultValue": .5,
+      "defaultValue": 1,
       "tooltip": "Estimate shooting accuracy"
     },
     {
