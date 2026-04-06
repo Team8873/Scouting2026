@@ -82,8 +82,7 @@ var config_data = `
       "min": 0,
       "max": 1,
       "defaultValue": .5,
-      "tooltip": "Estimate shooting accuracy",
-      "index": .01
+      "tooltip": "Estimate shooting accuracy"
     },
     {
       "name": "Fuel Passed",
