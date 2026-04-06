@@ -80,9 +80,10 @@ var config_data = `
       "type": "slider",
       "code": "ac",
       "min": 0,
-      "max": 100,
-      "defaultValue": 50,
-      "tooltip": "Estimate shooting accuracy"
+      "max": 1,
+      "defaultValue": .5,
+      "tooltip": "Estimate shooting accuracy",
+      "index": .01
     },
     {
       "name": "Fuel Passed",
