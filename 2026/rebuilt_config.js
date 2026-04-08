@@ -80,8 +80,8 @@ var config_data = `
       "type": "slider",
       "code": "ac",
       "min": 0,
-      "max": 1,
-      "defaultValue": 1,
+      "max": 100,
+      "defaultValue": 50,
       "tooltip": "Estimate shooting accuracy"
     },
     {
