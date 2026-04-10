@@ -34,7 +34,6 @@ html, body {
     letter-spacing: 1px;
     border-style: groove;
     border-width: 2px;
-    background-image: linear-gradient(to bottom, pink, lime);
 }
 
 input[type="button"]:active {
