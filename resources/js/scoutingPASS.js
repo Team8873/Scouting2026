@@ -308,7 +308,17 @@ function addClickableImage(table, idx, name, data) {
 
   if (showFlip || showUndo) {
     idx += 1
-    row = table.insertRow(idx);
+    row = table.insertRow(idx);  var currentX = e.changedTouches[0].screenX;
+  var diffX = initialX - currentX;
+
+  // sliding horizontally
+  if (diffX / screen.width > xThreshold) {
+    // swiped left
+    swipePage(1);
+  } else if (diffX / screen.width < -xThreshold) {
+    // swiped right
+    swipePage(-1);
+  }
     cell = row.insertCell(0);
     cell.setAttribute("colspan", 2);
     cell.setAttribute("style", "text-align: center;");
@@ -1190,20 +1200,6 @@ function moveTouch(e) {
   if (initialX === null) {
     return;
   }
-
-  var currentX = e.changedTouches[0].screenX;
-  var diffX = initialX - currentX;
-
-  // sliding horizontally
-  if (diffX / screen.width > xThreshold) {
-    // swiped left
-    swipePage(1);
-  } else if (diffX / screen.width < -xThreshold) {
-    // swiped right
-    swipePage(-1);
-  }
-  initialX = null;
-};
 
 function swipePage(increment, force=false) {
 
