@@ -5,7 +5,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "ScoutingForMP",
-  "page_title": "REBUILT v3",
+  "page_title": "REBUILT BETTER",
   "checkboxAs": "10",
   "prematch": [
     {
