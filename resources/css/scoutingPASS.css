@@ -34,7 +34,7 @@ html, body {
     letter-spacing: 1px;
     border-style: groove;
     border-width: 2px;
-    border-color: rgb(255, 0, 251);
+    background-image: linear-gradient(to bottom, red, yellow);
 }
 
 input[type="button"]:active {
