@@ -1198,6 +1198,7 @@ function moveTouch(e) {
   if (initialX === null) {
     return;
   }
+}
 
 function swipePage(increment, force=false) {
 
