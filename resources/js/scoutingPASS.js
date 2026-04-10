@@ -307,10 +307,9 @@ function addClickableImage(table, idx, name, data) {
   }
 
   if (showFlip || showUndo) {
-    idx += 1
-    row = table.insertRow(idx);  var currentX = e.changedTouches[0].screenX;
-  var diffX = initialX - currentX;
-
+   idx += 1;
+row = table.insertRow(idx);
+cell = row.insertCell(0);
   // sliding horizontally
   if (diffX / screen.width > xThreshold) {
     // swiped left
